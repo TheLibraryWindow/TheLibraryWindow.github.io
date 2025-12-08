@@ -4,8 +4,8 @@ const LANDSCAPE := Vector2i(1280, 720)
 const PORTRAIT := Vector2i(720, 1280)
 const MOBILE_SHORT_EDGE_THRESHOLD := 820
 
-var _default_scale_mode := Viewport.CONTENT_SCALE_MODE_CANVAS_ITEMS
-var _default_scale_aspect := Viewport.CONTENT_SCALE_ASPECT_KEEP
+var _default_scale_mode: Viewport.ContentScaleMode = Viewport.ContentScaleMode.CONTENT_SCALE_MODE_CANVAS_ITEMS
+var _default_scale_aspect: Viewport.ContentScaleAspect = Viewport.ContentScaleAspect.CONTENT_SCALE_ASPECT_KEEP
 
 func _ready() -> void:
 	var viewport := get_viewport()
@@ -18,16 +18,16 @@ func _notification(what: int) -> void:
 		_update_viewport()
 
 func _update_viewport() -> void:
-	var viewport := get_viewport()
+	var viewport: Viewport = get_viewport()
 	var win_size := DisplayServer.window_get_size()
 	if win_size == Vector2i.ZERO:
 		return
 
-	var shortest_edge := min(win_size.x, win_size.y)
-	var is_mobile := shortest_edge <= MOBILE_SHORT_EDGE_THRESHOLD
+	var shortest_edge: int = min(win_size.x, win_size.y)
+	var is_mobile: bool = shortest_edge <= MOBILE_SHORT_EDGE_THRESHOLD
 	if is_mobile:
-		viewport.content_scale_mode = Viewport.CONTENT_SCALE_MODE_DISABLED
-		viewport.content_scale_aspect = Viewport.CONTENT_SCALE_ASPECT_IGNORE
+		viewport.content_scale_mode = Viewport.ContentScaleMode.CONTENT_SCALE_MODE_DISABLED
+		viewport.content_scale_aspect = Viewport.ContentScaleAspect.CONTENT_SCALE_ASPECT_IGNORE
 		viewport.content_scale_size = win_size
 	else:
 		var target := PORTRAIT if win_size.x < win_size.y else LANDSCAPE
