@@ -1,0 +1,185 @@
+[gd_scene load_steps=3 format=3 uid="uid://1f6w8owh2r7h"]
+
+[ext_resource type="Script" uid="uid://b50i3kxbdbc1a" path="res://Scripts/LoginMenu.gd" id="1"]
+
+[sub_resource type="StyleBoxFlat" id="1"]
+content_margin_left = 24.0
+content_margin_top = 32.0
+content_margin_right = 24.0
+content_margin_bottom = 32.0
+bg_color = Color(0.058824, 0.078431, 0.129412, 0.85)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.247059, 0.698039, 0.847059, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+shadow_color = Color(0, 0, 0, 0.35)
+shadow_size = 12
+
+[node name="LoginMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("1")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0.05098, 0.070588, 0.12549, 1)
+
+[node name="Gradient" type="ColorRect" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0.043137, 0.235294, 0.352941, 0.45)
+
+[node name="FlowLines" type="HBoxContainer" parent="."]
+modulate = Color(1, 1, 1, 0.08)
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="Line" type="ColorRect" parent="FlowLines"]
+custom_minimum_size = Vector2(4, 0)
+layout_mode = 2
+color = Color(0.164706, 0.596078, 0.647059, 1)
+
+[node name="Line2" type="ColorRect" parent="FlowLines"]
+custom_minimum_size = Vector2(4, 0)
+layout_mode = 2
+color = Color(0.203922, 0.329412, 0.666667, 1)
+
+[node name="Line3" type="ColorRect" parent="FlowLines"]
+custom_minimum_size = Vector2(4, 0)
+layout_mode = 2
+color = Color(0.109804, 0.345098, 0.654902, 1)
+
+[node name="Layout" type="CenterContainer" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel" type="PanelContainer" parent="Layout"]
+modulate = Color(1, 1, 1, 0.98)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("1")
+
+[node name="VBox" type="VBoxContainer" parent="Layout/Panel"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Title" type="Label" parent="Layout/Panel/VBox"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.082353, 0.223529, 0.372549, 0.6)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 44
+text = "SkillPath"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Subtitle" type="Label" parent="Layout/Panel/VBox"]
+modulate = Color(0.666667, 0.87451, 1, 1)
+layout_mode = 2
+text = "Track Your Progress, Master English"
+horizontal_alignment = 1
+
+[node name="Tagline" type="Label" parent="Layout/Panel/VBox"]
+modulate = Color(0.823529, 0.878431, 1, 1)
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+text = "Adaptive Trinity ISE prep"
+horizontal_alignment = 1
+
+[node name="TabContainer" type="TabContainer" parent="Layout/Panel/VBox"]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+size_flags_vertical = 3
+current_tab = 0
+
+[node name="Login" type="VBoxContainer" parent="Layout/Panel/VBox/TabContainer"]
+custom_minimum_size = Vector2(0, 360)
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+metadata/_tab_index = 0
+
+[node name="LoginUser" type="LineEdit" parent="Layout/Panel/VBox/TabContainer/Login"]
+layout_mode = 2
+placeholder_text = "Username"
+
+[node name="LoginPass" type="LineEdit" parent="Layout/Panel/VBox/TabContainer/Login"]
+layout_mode = 2
+placeholder_text = "Password"
+secret = true
+
+[node name="LoginButton" type="Button" parent="Layout/Panel/VBox/TabContainer/Login"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Enter SkillPath"
+
+[node name="LoginStatus" type="Label" parent="Layout/Panel/VBox/TabContainer/Login"]
+modulate = Color(1, 1, 1, 0.83)
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="Register" type="VBoxContainer" parent="Layout/Panel/VBox/TabContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 360)
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+metadata/_tab_index = 1
+
+[node name="RegisterUser" type="LineEdit" parent="Layout/Panel/VBox/TabContainer/Register"]
+layout_mode = 2
+placeholder_text = "Choose a username"
+
+[node name="RegisterPass" type="LineEdit" parent="Layout/Panel/VBox/TabContainer/Register"]
+layout_mode = 2
+placeholder_text = "Create a password"
+secret = true
+
+[node name="RegisterButton" type="Button" parent="Layout/Panel/VBox/TabContainer/Register"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Create account"
+
+[node name="RegisterStatus" type="Label" parent="Layout/Panel/VBox/TabContainer/Register"]
+modulate = Color(1, 1, 1, 0.83)
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="Footer" type="HBoxContainer" parent="Layout/Panel/VBox"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+alignment = 1
+
+[node name="ProgressHint" type="Label" parent="Layout/Panel/VBox/Footer"]
+modulate = Color(0.768627, 0.858824, 1, 1)
+layout_mode = 2
+text = "Secure local progress tracking"
+
+[node name="TaglineTimer" type="Timer" parent="."]
+wait_time = 2.5
+autostart = true
