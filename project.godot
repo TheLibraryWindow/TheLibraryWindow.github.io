@@ -12,19 +12,14 @@ config_version=5
 
 config/name="SkillPath : Interactive Trinity ISE Practice"
 run/main_scene="uid://1f6w8owh2r7h"
-config/features=PackedStringArray("4.5", "GL Compatibility")
+config/features=PackedStringArray("4.5", "Forward+")
 config/icon="res://icon.svg"
-
-[autoload]
-
-ViewportScaler="*res://Scripts/ViewportScaler.gd"
 
 [display]
 
-window/size/viewport_width=1280
-window/size/viewport_height=720
+window/size/viewport_width=1600
+window/size/viewport_height=900
 
 [rendering]
 
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
+renderer/rendering_method="forward_plus"

@@ -3,15 +3,17 @@ extends Control
 const AuthManagerClass := preload("res://Scripts/AuthManager.gd")
 const UIHelpersClass := preload("res://Scripts/UI.gd")
 
-const TARGET_DESKTOP_SIZE := Vector2(1280.0, 720.0)
-const PANEL_BASE_SIZE := Vector2(520.0, 640.0)
-const PANEL_MIN_SIZE := Vector2(320.0, 520.0)
-const MOBILE_BREAKPOINT := 820.0
+const TARGET_DESKTOP_SIZE := Vector2(1600.0, 900.0)
+const PANEL_BASE_SIZE := Vector2(560.0, 640.0)
+const PANEL_MIN_SIZE := Vector2(360.0, 540.0)
+const PANEL_MAX_SCALE := 1.25
 const TITLE_FONT_SIZE := 44
 const SUBTITLE_FONT_SIZE := 22
 const TAGLINE_FONT_SIZE := 18
-const FLOW_LINE_MIN_HEIGHT := 320.0
-const MOBILE_MARGIN := Vector4(16.0, 24.0, 16.0, 24.0) # left, top, right, bottom
+const FLOW_LINE_MIN_HEIGHT := 360.0
+const LAYOUT_MARGIN_RATIO := Vector2(0.08, 0.06)
+const LAYOUT_MARGIN_MIN := Vector2(96.0, 72.0)
+const LAYOUT_MARGIN_MAX := Vector2(180.0, 144.0)
 
 signal user_ready(username: String)
 
@@ -33,10 +35,10 @@ signal user_ready(username: String)
 
 var phrases := [
 	"Adaptive Trinity ISE prep",
-	"Sleek, mobile-first coaching",
+	"Precision desktop coaching",
 	"Animated guidance for every skill",
 	"Track Listening · Speaking · Reading · Writing",
-    "Earn badges as you climb from B1 to C1"
+	"Earn badges as you climb from B1 to C1"
 ]
 var phrase_index := 0
 var auth_manager: Node
@@ -53,12 +55,13 @@ func _ready() -> void:
 func _prepare_theme() -> void:
 	var inputs: Array[LineEdit] = [login_username, login_password, register_username, register_password]
 	for field in inputs:
-		UIHelpersClass.apply_touch_target(field)
-		_connect_virtual_keyboard(field)
+		UIHelpersClass.ensure_minimum_control_size(field)
+		field.mouse_filter = Control.MOUSE_FILTER_STOP
+		field.focus_mode = Control.FOCUS_ALL
 
 	var buttons := [login_button, register_button]
 	for btn in buttons:
-		UIHelpersClass.apply_touch_target(btn)
+		UIHelpersClass.ensure_minimum_control_size(btn)
 		btn.theme_type_variation = "SkillPathPrimary"
 
 func _setup_auth() -> void:
@@ -77,80 +80,43 @@ func _on_viewport_resized() -> void:
 
 func _apply_responsive_layout() -> void:
 	var viewport_size: Vector2 = get_viewport_rect().size
-	var screen_size := viewport_size
+	var width_ratio := viewport_size.x / TARGET_DESKTOP_SIZE.x
+	var height_ratio := viewport_size.y / TARGET_DESKTOP_SIZE.y
+	var scale := clampf(minf(width_ratio, height_ratio), 0.85, PANEL_MAX_SCALE)
 
-	var width_ratio: float = clampf(screen_size.x / TARGET_DESKTOP_SIZE.x, 0.5, 1.0)
-	var height_ratio: float = clampf(screen_size.y / TARGET_DESKTOP_SIZE.y, 0.6, 1.0)
-	var is_mobile := screen_size.x <= MOBILE_BREAKPOINT
+	var panel_size := PANEL_BASE_SIZE * Vector2(scale, scale)
+	panel_size.x = clampf(panel_size.x, PANEL_MIN_SIZE.x, PANEL_BASE_SIZE.x * PANEL_MAX_SCALE)
+	panel_size.y = clampf(panel_size.y, PANEL_MIN_SIZE.y, PANEL_BASE_SIZE.y * PANEL_MAX_SCALE)
+	panel.custom_minimum_size = panel_size
 
-	_adjust_layout_margins(is_mobile)
-
-	if is_mobile:
-		var mobile_width := clampf(screen_size.x - (MOBILE_MARGIN.x + MOBILE_MARGIN.z), PANEL_MIN_SIZE.x, screen_size.x)
-		var mobile_height := clampf(screen_size.y - (MOBILE_MARGIN.y + MOBILE_MARGIN.w), PANEL_MIN_SIZE.y, screen_size.y)
-		panel.custom_minimum_size = Vector2(mobile_width, mobile_height)
-	else:
-		var panel_size := PANEL_BASE_SIZE * Vector2(width_ratio, height_ratio)
-		panel_size.x = clampf(panel_size.x, PANEL_MIN_SIZE.x, PANEL_BASE_SIZE.x)
-		panel_size.y = clampf(panel_size.y, PANEL_MIN_SIZE.y, PANEL_BASE_SIZE.y)
-		panel.custom_minimum_size = panel_size
-
-	var text_scale: float = clampf(minf(width_ratio, height_ratio), 0.8, 1.0)
-	if is_mobile:
-		text_scale = clampf(text_scale * 0.98, 0.85, 1.0)
-
+	var text_scale := clampf(scale, 0.9, 1.2)
 	_apply_font_scale(text_scale)
-	_update_flow_lines(screen_size, is_mobile)
+	_adjust_layout_margins(viewport_size)
+	_update_flow_lines(viewport_size)
 
 func _apply_font_scale(font_scale: float) -> void:
 	title_label.add_theme_font_size_override("font_size", roundi(TITLE_FONT_SIZE * font_scale))
 	subtitle_label.add_theme_font_size_override("font_size", roundi(SUBTITLE_FONT_SIZE * (font_scale + 0.05)))
 	tagline_label.add_theme_font_size_override("font_size", roundi(TAGLINE_FONT_SIZE * font_scale))
 
-func _update_flow_lines(viewport_size: Vector2, is_mobile: bool) -> void:
-	var target_height: float = maxf(viewport_size.y * (0.5 if is_mobile else 0.7), FLOW_LINE_MIN_HEIGHT)
+func _update_flow_lines(viewport_size: Vector2) -> void:
+	var target_height: float = maxf(viewport_size.y * 0.65, FLOW_LINE_MIN_HEIGHT)
 	for line in flow_lines.get_children():
 		if line is ColorRect:
 			line.custom_minimum_size.y = target_height
 
 	var flow_color := flow_lines.modulate
-	flow_color.a = 0.05 if is_mobile else 0.08
+	flow_color.a = 0.08
 	flow_lines.modulate = flow_color
 
-func _connect_virtual_keyboard(field: LineEdit) -> void:
-	field.mouse_filter = Control.MOUSE_FILTER_STOP
-	field.focus_mode = Control.FOCUS_ALL
-	field.focus_entered.connect(func():
-		_show_virtual_keyboard(field)
-	)
-	field.focus_exited.connect(_hide_virtual_keyboard)
-	field.gui_input.connect(func(event: InputEvent):
-		if (event is InputEventScreenTouch or event is InputEventMouseButton) and event.pressed:
-			field.grab_focus()
-			_show_virtual_keyboard(field)
-	)
+func _adjust_layout_margins(viewport_size: Vector2) -> void:
+	var horizontal_margin := clampf(viewport_size.x * LAYOUT_MARGIN_RATIO.x, LAYOUT_MARGIN_MIN.x, LAYOUT_MARGIN_MAX.x)
+	var vertical_margin := clampf(viewport_size.y * LAYOUT_MARGIN_RATIO.y, LAYOUT_MARGIN_MIN.y, LAYOUT_MARGIN_MAX.y)
 
-func _show_virtual_keyboard(field: LineEdit) -> void:
-	if not DisplayServer.has_feature(DisplayServer.FEATURE_VIRTUAL_KEYBOARD):
-		return
-	var rect := field.get_global_rect()
-	var rect_i := Rect2i(Vector2i(rect.position), Vector2i(rect.size))
-	DisplayServer.virtual_keyboard_show(field.text, rect_i)
-
-func _hide_virtual_keyboard() -> void:
-	if not DisplayServer.has_feature(DisplayServer.FEATURE_VIRTUAL_KEYBOARD):
-		return
-	DisplayServer.virtual_keyboard_hide()
-
-func _adjust_layout_margins(is_mobile: bool) -> void:
-	var side_margin := MOBILE_MARGIN.x if is_mobile else 96.0
-	var top_margin := MOBILE_MARGIN.y if is_mobile else 72.0
-	var bottom_margin := MOBILE_MARGIN.x if is_mobile else 72.0
-
-	for margin_name in ["left", "right"]:
-		layout_container.add_theme_constant_override("margin_%s" % margin_name, side_margin)
-	layout_container.add_theme_constant_override("margin_top", top_margin)
-	layout_container.add_theme_constant_override("margin_bottom", bottom_margin)
+	layout_container.add_theme_constant_override("margin_left", horizontal_margin)
+	layout_container.add_theme_constant_override("margin_right", horizontal_margin)
+	layout_container.add_theme_constant_override("margin_top", vertical_margin)
+	layout_container.add_theme_constant_override("margin_bottom", vertical_margin)
 
 func _handle_login() -> void:
 	login_status.text = ""

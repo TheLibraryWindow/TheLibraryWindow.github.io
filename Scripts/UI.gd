@@ -1,8 +1,7 @@
 extends Node
 class_name UIHelpers
 
-static func apply_touch_target(control: Control) -> void:
-	var min_size := Vector2(48, 48)
+static func ensure_minimum_control_size(control: Control, min_size := Vector2(36, 36)) -> void:
 	if control.custom_minimum_size.x < min_size.x:
 		control.custom_minimum_size.x = min_size.x
 	if control.custom_minimum_size.y < min_size.y:
@@ -11,7 +10,7 @@ static func apply_touch_target(control: Control) -> void:
 static func build_button(text: String, callback_target: Object, callback_method: StringName) -> Button:
 	var button := Button.new()
 	button.text = text
-	apply_touch_target(button)
+	ensure_minimum_control_size(button)
 	button.pressed.connect(func():
 		if callback_target and callback_target.has_method(callback_method):
 			callback_target.call(callback_method, button)
