@@ -1,0 +1,308 @@
+{
+  "questions": [
+    {
+      "id": "A1-01",
+      "level_hint": "A1",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "Choose the correct sentence.",
+      "options": ["She go to school.", "She goes to school.", "She going to school.", "She gone to school."],
+      "answer": "She goes to school."
+    },
+    {
+      "id": "A1-02",
+      "level_hint": "A1",
+      "skill": "Vocabulary",
+      "type": "text",
+      "prompt": "Fill in the missing word: I ____ tea every morning.",
+      "answer": "drink"
+    },
+    {
+      "id": "A1-03",
+      "level_hint": "A1",
+      "skill": "Reading",
+      "type": "mc",
+      "prompt": "The sign says 'Exit'. What does it mean?",
+      "options": ["Go faster", "Leave here", "Be quiet", "Help me"],
+      "answer": "Leave here"
+    },
+    {
+      "id": "A1-04",
+      "level_hint": "A1",
+      "skill": "Listening",
+      "type": "mc",
+      "prompt": "Which word is a day of the week?",
+      "options": ["May", "Cold", "Tuesday", "Soon"],
+      "answer": "Tuesday"
+    },
+    {
+      "id": "A2-01",
+      "level_hint": "A2",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "Choose the best option: If it ____ tomorrow, we'll stay home.",
+      "options": ["rain", "rains", "will rain", "raining"],
+      "answer": "rains"
+    },
+    {
+      "id": "A2-02",
+      "level_hint": "A2",
+      "skill": "Vocabulary",
+      "type": "text",
+      "prompt": "Give one synonym for 'angry'.",
+      "answer": "mad"
+    },
+    {
+      "id": "A2-03",
+      "level_hint": "A2",
+      "skill": "Reading",
+      "type": "mc",
+      "prompt": "'Employees must badge in'. Who is this message for?",
+      "options": ["Customers", "Workers", "Students", "Visitors"],
+      "answer": "Workers"
+    },
+    {
+      "id": "A2-04",
+      "level_hint": "A2",
+      "skill": "Listening",
+      "type": "mc",
+      "prompt": "Choose the correct response: 'Would you like some coffee?'",
+      "options": ["Yes, please.", "No, I do.", "She does.", "We going."],
+      "answer": "Yes, please."
+    },
+    {
+      "id": "B1-01",
+      "level_hint": "B1",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "Select the correct reported speech: 'I am tired,' she said.",
+      "options": ["She said she is tired.", "She said she was tired.", "She say she tired.", "She told she was tired."],
+      "answer": "She said she was tired."
+    },
+    {
+      "id": "B1-02",
+      "level_hint": "B1",
+      "skill": "Vocabulary",
+      "type": "text",
+      "prompt": "What phrasal verb means 'to cancel an event'?",
+      "answer": "call off"
+    },
+    {
+      "id": "B1-03",
+      "level_hint": "B1",
+      "skill": "Reading",
+      "type": "mc",
+      "prompt": "A review says 'service was prompt'. What does 'prompt' mean here?",
+      "options": ["Slow", "Expensive", "Friendly", "Quick"],
+      "answer": "Quick"
+    },
+    {
+      "id": "B1-04",
+      "level_hint": "B1",
+      "skill": "Listening",
+      "type": "mc",
+      "prompt": "During a meeting you hear 'Let's circle back on Friday'. What should you do?",
+      "options": ["Cancel Friday", "Meet again Friday", "Ignore it", "Send gifts"],
+      "answer": "Meet again Friday"
+    },
+    {
+      "id": "B1-05",
+      "level_hint": "B1",
+      "skill": "Writing",
+      "type": "text",
+      "prompt": "Write a linking word that contrasts two ideas.",
+      "answer": "however"
+    },
+    {
+      "id": "B2-01",
+      "level_hint": "B2",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "Choose the sentence with correct inversion.",
+      "options": ["Not only she laughed, but also cried.", "Not only did she laugh, but she also cried.", "Only not she laughed, also cried.", "She not only laughed, did also cry."],
+      "answer": "Not only did she laugh, but she also cried."
+    },
+    {
+      "id": "B2-02",
+      "level_hint": "B2",
+      "skill": "Vocabulary",
+      "type": "text",
+      "prompt": "Give a word meaning 'careful and using good judgment'.",
+      "answer": "prudent"
+    },
+    {
+      "id": "B2-03",
+      "level_hint": "B2",
+      "skill": "Reading",
+      "type": "mc",
+      "prompt": "In a news article 'the policy was rescinded'. What happened?",
+      "options": ["It was delayed", "It was canceled", "It was funded", "It was accepted"],
+      "answer": "It was canceled"
+    },
+    {
+      "id": "B2-04",
+      "level_hint": "B2",
+      "skill": "Listening",
+      "type": "mc",
+      "prompt": "'Can you put me through to finance?' What is requested?",
+      "options": ["Transfer a call", "Send an email", "Pay a bill", "Arrange travel"],
+      "answer": "Transfer a call"
+    },
+    {
+      "id": "B2-05",
+      "level_hint": "B2",
+      "skill": "Writing",
+      "type": "text",
+      "prompt": "Name a formal closing for a business email.",
+      "answer": "kind regards"
+    },
+    {
+      "id": "C1-01",
+      "level_hint": "C1",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "Select the sentence with the correct use of a reduced relative clause.",
+      "options": ["The book written by her is best.", "The book writing by her is best.", "The written book by her is best.", "The book was written she is best."],
+      "answer": "The book written by her is best."
+    },
+    {
+      "id": "C1-02",
+      "level_hint": "C1",
+      "skill": "Vocabulary",
+      "type": "text",
+      "prompt": "Provide a noun meaning 'the highest point of achievement'.",
+      "answer": "pinnacle"
+    },
+    {
+      "id": "C1-03",
+      "level_hint": "C1",
+      "skill": "Reading",
+      "type": "mc",
+      "prompt": "In context, 'her analysis was trenchant' suggests it was...",
+      "options": ["Vague", "Harsh but precise", "Late", "Supportive"],
+      "answer": "Harsh but precise"
+    },
+    {
+      "id": "C1-04",
+      "level_hint": "C1",
+      "skill": "Listening",
+      "type": "mc",
+      "prompt": "You hear 'Let's table this' in a US meeting. What happens?",
+      "options": ["Discuss now", "Delay the topic", "Vote immediately", "Cancel the meeting"],
+      "answer": "Delay the topic"
+    },
+    {
+      "id": "C1-05",
+      "level_hint": "C1",
+      "skill": "Writing",
+      "type": "text",
+      "prompt": "Give one cohesive device that signals cause and effect.",
+      "answer": "therefore"
+    },
+    {
+      "id": "C2-01",
+      "level_hint": "C2",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "Choose the sentence that best demonstrates nominalisation.",
+      "options": ["We concluded the deal.", "The conclusion of the deal surprised us.", "We were concluding the deal.", "We will conclude the deal."],
+      "answer": "The conclusion of the deal surprised us."
+    },
+    {
+      "id": "C2-02",
+      "level_hint": "C2",
+      "skill": "Vocabulary",
+      "type": "text",
+      "prompt": "Provide a precise synonym for 'ubiquitous'.",
+      "answer": "omnipresent"
+    },
+    {
+      "id": "C2-03",
+      "level_hint": "C2",
+      "skill": "Reading",
+      "type": "mc",
+      "prompt": "In academic writing, what does 'salient' mean?",
+      "options": ["Difficult", "Irrelevant", "Prominent", "Sequential"],
+      "answer": "Prominent"
+    },
+    {
+      "id": "C2-04",
+      "level_hint": "C2",
+      "skill": "Listening",
+      "type": "mc",
+      "prompt": "During a lecture you hear 'Let's problematize this assumption'. What is the speaker doing?",
+      "options": ["Agreeing", "Questioning", "Ignoring", "Summarizing"],
+      "answer": "Questioning"
+    },
+    {
+      "id": "C2-05",
+      "level_hint": "C2",
+      "skill": "Writing",
+      "type": "text",
+      "prompt": "Give a discourse marker suitable for contrasting research findings in a journal article.",
+      "answer": "conversely"
+    },
+    {
+      "id": "MIX-01",
+      "level_hint": "B1",
+      "skill": "Listening",
+      "type": "mc",
+      "prompt": "'I'll pencil you in for 3 PM.' What does this imply?",
+      "options": ["The meeting is certain", "It's a tentative plan", "Meeting cancelled", "Need payment"],
+      "answer": "It's a tentative plan"
+    },
+    {
+      "id": "MIX-02",
+      "level_hint": "B2",
+      "skill": "Vocabulary",
+      "type": "text",
+      "prompt": "Write the adjective meaning 'able to recover quickly'.",
+      "answer": "resilient"
+    },
+    {
+      "id": "MIX-03",
+      "level_hint": "C1",
+      "skill": "Reading",
+      "type": "mc",
+      "prompt": "In a research abstract, 'mitigate' most nearly means...",
+      "options": ["Measure", "Reduce", "Repeat", "Predict"],
+      "answer": "Reduce"
+    },
+    {
+      "id": "MIX-04",
+      "level_hint": "A2",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "Choose the correct comparative form: 'This exercise is ____ than the last.'",
+      "options": ["difficult", "more difficult", "difficulter", "most difficult"],
+      "answer": "more difficult"
+    },
+    {
+      "id": "MIX-05",
+      "level_hint": "C2",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "Identify the sentence with a cleft structure.",
+      "options": ["The manager approved the plan.", "It was the manager who approved the plan.", "The plan was approved.", "Approved the plan the manager."],
+      "answer": "It was the manager who approved the plan."
+    },
+    {
+      "id": "MIX-06",
+      "level_hint": "B2",
+      "skill": "Reading",
+      "type": "mc",
+      "prompt": "'The board balked at the proposal.' What did they do?",
+      "options": ["Accepted it", "Hesitated", "Funded it", "Ignored it"],
+      "answer": "Hesitated"
+    },
+    {
+      "id": "MIX-07",
+      "level_hint": "A1",
+      "skill": "Vocabulary",
+      "type": "mc",
+      "prompt": "Which word means the opposite of 'cold'?",
+      "options": ["Hot", "Wet", "Slow", "Late"],
+      "answer": "Hot"
+    }
+  ]
+}

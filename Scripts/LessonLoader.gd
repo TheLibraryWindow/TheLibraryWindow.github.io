@@ -40,3 +40,18 @@ func get_lesson(level: String, skill: String, index: int = 0) -> Dictionary:
 	if index >= lessons.size():
 		return {}
 	return lessons[index]
+
+func find_lesson(level: String, lesson_id: String) -> Dictionary:
+	if lesson_id.is_empty():
+		return {}
+	var level_data := load_lessons(level)
+	if level_data.is_empty():
+		return {}
+	var skills := level_data.get("skills", {})
+	for skill in skills.keys():
+		for lesson in skills[skill]:
+			if lesson.get("id", "") == lesson_id:
+				var payload := lesson.duplicate(true)
+				payload["skill"] = skill
+				return payload
+	return {}
