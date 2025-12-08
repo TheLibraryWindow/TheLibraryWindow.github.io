@@ -9,17 +9,21 @@ html, body, #canvas {
 	margin: 0;
 	padding: 0;
 	border: 0;
+	height: 100%;
 }
 
 body {
 	color: white;
 	background-color: black;
 	overflow: hidden;
-	touch-action: none;
+	touch-action: manipulation;
+	overscroll-behavior: contain;
 }
 
 #canvas {
 	display: block;
+	width: 100vw;
+	height: 100vh;
 }
 
 #canvas:focus {

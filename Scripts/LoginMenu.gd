@@ -77,9 +77,7 @@ func _on_viewport_resized() -> void:
 
 func _apply_responsive_layout() -> void:
 	var viewport_size: Vector2 = get_viewport_rect().size
-	var screen_size := Vector2(DisplayServer.window_get_size())
-	if screen_size == Vector2.ZERO:
-		screen_size = viewport_size
+	var screen_size := viewport_size
 
 	var width_ratio: float = clampf(screen_size.x / TARGET_DESKTOP_SIZE.x, 0.5, 1.0)
 	var height_ratio: float = clampf(screen_size.y / TARGET_DESKTOP_SIZE.y, 0.6, 1.0)
