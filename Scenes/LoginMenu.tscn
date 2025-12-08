@@ -88,6 +88,7 @@ theme_override_styles/panel = SubResource("1")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_constants/separation = 8
 
 [node name="Title" type="Label" parent="Layout/Panel/VBox"]
 layout_mode = 2
@@ -97,58 +98,62 @@ theme_override_font_sizes/font_size = 44
 text = "SkillPath"
 horizontal_alignment = 1
 vertical_alignment = 1
+custom_minimum_size = Vector2(0, 50)
 
 [node name="Subtitle" type="Label" parent="Layout/Panel/VBox"]
 modulate = Color(0.666667, 0.87451, 1, 1)
 layout_mode = 2
 text = "Track Your Progress, Master English"
 horizontal_alignment = 1
+custom_minimum_size = Vector2(0, 28)
 
 [node name="Tagline" type="Label" parent="Layout/Panel/VBox"]
 modulate = Color(0.823529, 0.878431, 1, 1)
-custom_minimum_size = Vector2(0, 48)
+custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 text = "Adaptive Trinity ISE prep"
 horizontal_alignment = 1
 
 [node name="TabContainer" type="TabContainer" parent="Layout/Panel/VBox"]
-custom_minimum_size = Vector2(0, 400)
 layout_mode = 2
 size_flags_vertical = 3
 current_tab = 0
 
 [node name="Login" type="VBoxContainer" parent="Layout/Panel/VBox/TabContainer"]
-custom_minimum_size = Vector2(0, 360)
 layout_mode = 2
 size_flags_vertical = 3
-alignment = 1
+alignment = 0
 metadata/_tab_index = 0
+theme_override_constants/separation = 12
 
 [node name="LoginUser" type="LineEdit" parent="Layout/Panel/VBox/TabContainer/Login"]
 layout_mode = 2
 placeholder_text = "Username"
+custom_minimum_size = Vector2(0, 40)
 
 [node name="LoginPass" type="LineEdit" parent="Layout/Panel/VBox/TabContainer/Login"]
 layout_mode = 2
 placeholder_text = "Password"
 secret = true
+custom_minimum_size = Vector2(0, 40)
 
 [node name="LoginButton" type="Button" parent="Layout/Panel/VBox/TabContainer/Login"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Enter SkillPath"
+custom_minimum_size = Vector2(0, 44)
 
 [node name="LoginStatus" type="Label" parent="Layout/Panel/VBox/TabContainer/Login"]
 modulate = Color(1, 1, 1, 0.83)
 layout_mode = 2
 horizontal_alignment = 1
+custom_minimum_size = Vector2(0, 24)
 
 [node name="Register" type="VBoxContainer" parent="Layout/Panel/VBox/TabContainer"]
 visible = false
-custom_minimum_size = Vector2(0, 360)
 layout_mode = 2
 size_flags_vertical = 3
-alignment = 1
+alignment = 0
 metadata/_tab_index = 1
 
 [node name="RegisterUser" type="LineEdit" parent="Layout/Panel/VBox/TabContainer/Register"]
@@ -171,7 +176,7 @@ layout_mode = 2
 horizontal_alignment = 1
 
 [node name="Footer" type="HBoxContainer" parent="Layout/Panel/VBox"]
-custom_minimum_size = Vector2(0, 60)
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 alignment = 1
 

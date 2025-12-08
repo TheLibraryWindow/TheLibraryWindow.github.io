@@ -16,7 +16,7 @@ func load_lessons(level: String) -> Dictionary:
 	if error != OK:
 		push_error("Failed to parse %s: %s" % [file_path, json.get_error_message()])
 		return {}
-	var result := json.data
+	var result: Dictionary = json.data
 	return result if typeof(result) == TYPE_DICTIONARY else {}
 
 func get_skills(level_data: Dictionary) -> Array:
@@ -29,7 +29,7 @@ func get_lessons_for(level_data: Dictionary, skill: String) -> Array:
 		return []
 	if not level_data.has("skills"):
 		return []
-	var skills := level_data["skills"]
+	var skills: Dictionary = level_data["skills"]
 	if not skills.has(skill):
 		return []
 	return skills[skill]
@@ -40,3 +40,18 @@ func get_lesson(level: String, skill: String, index: int = 0) -> Dictionary:
 	if index >= lessons.size():
 		return {}
 	return lessons[index]
+
+func find_lesson(level: String, lesson_id: String) -> Dictionary:
+	if lesson_id.is_empty():
+		return {}
+	var level_data := load_lessons(level)
+	if level_data.is_empty():
+		return {}
+	var skills: Dictionary = level_data.get("skills", {})
+	for skill in skills.keys():
+		for lesson in skills[skill]:
+			if lesson.get("id", "") == lesson_id:
+				var payload: Dictionary = lesson.duplicate(true)
+				payload["skill"] = skill
+				return payload
+	return {}
