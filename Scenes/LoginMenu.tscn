@@ -112,16 +112,14 @@ text = "Adaptive Trinity ISE prep"
 horizontal_alignment = 1
 
 [node name="TabContainer" type="TabContainer" parent="Layout/Panel/VBox"]
-custom_minimum_size = Vector2(0, 400)
 layout_mode = 2
 size_flags_vertical = 3
 current_tab = 0
 
 [node name="Login" type="VBoxContainer" parent="Layout/Panel/VBox/TabContainer"]
-custom_minimum_size = Vector2(0, 360)
 layout_mode = 2
 size_flags_vertical = 3
-alignment = 1
+alignment = 0
 metadata/_tab_index = 0
 
 [node name="LoginUser" type="LineEdit" parent="Layout/Panel/VBox/TabContainer/Login"]
@@ -145,10 +143,9 @@ horizontal_alignment = 1
 
 [node name="Register" type="VBoxContainer" parent="Layout/Panel/VBox/TabContainer"]
 visible = false
-custom_minimum_size = Vector2(0, 360)
 layout_mode = 2
 size_flags_vertical = 3
-alignment = 1
+alignment = 0
 metadata/_tab_index = 1
 
 [node name="RegisterUser" type="LineEdit" parent="Layout/Panel/VBox/TabContainer/Register"]
