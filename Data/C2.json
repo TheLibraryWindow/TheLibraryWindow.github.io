@@ -1,0 +1,351 @@
+{
+  "level": "C2",
+  "tagline": "Master Studio",
+  "description": "Structured practice to progress through C2 outcomes.",
+  "skills": {
+    "Listening": [
+      {
+        "id": "C2-LIS-01",
+        "title": "Listening Studio 1",
+        "objectives": [
+          "Apply listening strategies for C2 contexts",
+          "Build confidence with scaffolded listening tasks"
+        ],
+        "instructions": "Work through the prompts, then submit your reflections for listening mastery.",
+        "dialogue": "Coach: Let's push your listening into the C2 zone.",
+        "text_sample": "Sample text for Listening at C2 lesson 1.",
+        "questions": [
+          {
+            "type": "mc",
+            "prompt": "What is the main idea of the announcement? (C2 Listening scenario 1)",
+            "options": [
+              "Schedule change",
+              "Weather alert",
+              "Holiday reminder",
+              "Security warning"
+            ],
+            "answer": "Schedule change",
+            "id": "C2-LIS-01-Q1"
+          },
+          {
+            "type": "text",
+            "prompt": "Write one keyword you heard. (C2 Listening scenario 1)",
+            "answer": "schedule",
+            "id": "C2-LIS-01-Q2"
+          }
+        ],
+        "animation": [
+          {
+            "target": "Coach",
+            "action": "fade_in",
+            "text": "Guiding through Listening focus 1."
+          }
+        ],
+        "assets": {
+          "audio": "",
+          "image": ""
+        }
+      },
+      {
+        "id": "C2-LIS-02",
+        "title": "Listening Studio 2",
+        "objectives": [
+          "Apply listening strategies for C2 contexts",
+          "Build confidence with scaffolded listening tasks"
+        ],
+        "instructions": "Work through the prompts, then submit your reflections for listening mastery.",
+        "dialogue": "Coach: Let's push your listening into the C2 zone.",
+        "text_sample": "Sample text for Listening at C2 lesson 2.",
+        "questions": [
+          {
+            "type": "mc",
+            "prompt": "What is the main idea of the announcement? (C2 Listening scenario 2)",
+            "options": [
+              "Schedule change",
+              "Weather alert",
+              "Holiday reminder",
+              "Security warning"
+            ],
+            "answer": "Schedule change",
+            "id": "C2-LIS-02-Q1"
+          },
+          {
+            "type": "text",
+            "prompt": "Write one keyword you heard. (C2 Listening scenario 2)",
+            "answer": "schedule",
+            "id": "C2-LIS-02-Q2"
+          }
+        ],
+        "animation": [
+          {
+            "target": "Coach",
+            "action": "fade_in",
+            "text": "Guiding through Listening focus 2."
+          }
+        ],
+        "assets": {
+          "audio": "",
+          "image": ""
+        }
+      }
+    ],
+    "Speaking": [
+      {
+        "id": "C2-SPE-01",
+        "title": "Speaking Studio 1",
+        "objectives": [
+          "Apply speaking strategies for C2 contexts",
+          "Build confidence with scaffolded speaking tasks"
+        ],
+        "instructions": "Work through the prompts, then submit your reflections for speaking mastery.",
+        "dialogue": "Coach: Let's push your speaking into the C2 zone.",
+        "text_sample": "Sample text for Speaking at C2 lesson 1.",
+        "questions": [
+          {
+            "type": "text",
+            "prompt": "Type the opening sentence you would say. (C2 Speaking scenario 1)",
+            "answer": "good morning",
+            "id": "C2-SPE-01-Q1"
+          },
+          {
+            "type": "mc",
+            "prompt": "Choose the best follow-up question. (C2 Speaking scenario 1)",
+            "options": [
+              "Can you clarify the main goal?",
+              "Why are you late?",
+              "Who are you?",
+              "Is it raining?"
+            ],
+            "answer": "Can you clarify the main goal?",
+            "id": "C2-SPE-01-Q2"
+          }
+        ],
+        "animation": [
+          {
+            "target": "Coach",
+            "action": "fade_in",
+            "text": "Guiding through Speaking focus 1."
+          }
+        ],
+        "assets": {
+          "audio": "",
+          "image": ""
+        }
+      },
+      {
+        "id": "C2-SPE-02",
+        "title": "Speaking Studio 2",
+        "objectives": [
+          "Apply speaking strategies for C2 contexts",
+          "Build confidence with scaffolded speaking tasks"
+        ],
+        "instructions": "Work through the prompts, then submit your reflections for speaking mastery.",
+        "dialogue": "Coach: Let's push your speaking into the C2 zone.",
+        "text_sample": "Sample text for Speaking at C2 lesson 2.",
+        "questions": [
+          {
+            "type": "text",
+            "prompt": "Type the opening sentence you would say. (C2 Speaking scenario 2)",
+            "answer": "good morning",
+            "id": "C2-SPE-02-Q1"
+          },
+          {
+            "type": "mc",
+            "prompt": "Choose the best follow-up question. (C2 Speaking scenario 2)",
+            "options": [
+              "Can you clarify the main goal?",
+              "Why are you late?",
+              "Who are you?",
+              "Is it raining?"
+            ],
+            "answer": "Can you clarify the main goal?",
+            "id": "C2-SPE-02-Q2"
+          }
+        ],
+        "animation": [
+          {
+            "target": "Coach",
+            "action": "fade_in",
+            "text": "Guiding through Speaking focus 2."
+          }
+        ],
+        "assets": {
+          "audio": "",
+          "image": ""
+        }
+      }
+    ],
+    "Reading": [
+      {
+        "id": "C2-REA-01",
+        "title": "Reading Studio 1",
+        "objectives": [
+          "Apply reading strategies for C2 contexts",
+          "Build confidence with scaffolded reading tasks"
+        ],
+        "instructions": "Work through the prompts, then submit your reflections for reading mastery.",
+        "dialogue": "Coach: Let's push your reading into the C2 zone.",
+        "text_sample": "Sample text for Reading at C2 lesson 1.",
+        "questions": [
+          {
+            "type": "mc",
+            "prompt": "What is the author's purpose? (C2 Reading scenario 1)",
+            "options": [
+              "Inform",
+              "Complain",
+              "Entertain",
+              "Advertise"
+            ],
+            "answer": "Inform",
+            "id": "C2-REA-01-Q1"
+          },
+          {
+            "type": "text",
+            "prompt": "Give one supporting detail from the text. (C2 Reading scenario 1)",
+            "answer": "data",
+            "id": "C2-REA-01-Q2"
+          }
+        ],
+        "animation": [
+          {
+            "target": "Coach",
+            "action": "fade_in",
+            "text": "Guiding through Reading focus 1."
+          }
+        ],
+        "assets": {
+          "audio": "",
+          "image": ""
+        }
+      },
+      {
+        "id": "C2-REA-02",
+        "title": "Reading Studio 2",
+        "objectives": [
+          "Apply reading strategies for C2 contexts",
+          "Build confidence with scaffolded reading tasks"
+        ],
+        "instructions": "Work through the prompts, then submit your reflections for reading mastery.",
+        "dialogue": "Coach: Let's push your reading into the C2 zone.",
+        "text_sample": "Sample text for Reading at C2 lesson 2.",
+        "questions": [
+          {
+            "type": "mc",
+            "prompt": "What is the author's purpose? (C2 Reading scenario 2)",
+            "options": [
+              "Inform",
+              "Complain",
+              "Entertain",
+              "Advertise"
+            ],
+            "answer": "Inform",
+            "id": "C2-REA-02-Q1"
+          },
+          {
+            "type": "text",
+            "prompt": "Give one supporting detail from the text. (C2 Reading scenario 2)",
+            "answer": "data",
+            "id": "C2-REA-02-Q2"
+          }
+        ],
+        "animation": [
+          {
+            "target": "Coach",
+            "action": "fade_in",
+            "text": "Guiding through Reading focus 2."
+          }
+        ],
+        "assets": {
+          "audio": "",
+          "image": ""
+        }
+      }
+    ],
+    "Writing": [
+      {
+        "id": "C2-WRI-01",
+        "title": "Writing Studio 1",
+        "objectives": [
+          "Apply writing strategies for C2 contexts",
+          "Build confidence with scaffolded writing tasks"
+        ],
+        "instructions": "Work through the prompts, then submit your reflections for writing mastery.",
+        "dialogue": "Coach: Let's push your writing into the C2 zone.",
+        "text_sample": "Sample text for Writing at C2 lesson 1.",
+        "questions": [
+          {
+            "type": "text",
+            "prompt": "Draft a concise thesis sentence. (C2 Writing scenario 1)",
+            "answer": "clear thesis",
+            "id": "C2-WRI-01-Q1"
+          },
+          {
+            "type": "mc",
+            "prompt": "Choose the best transition word for contrast. (C2 Writing scenario 1)",
+            "options": [
+              "Moreover",
+              "Therefore",
+              "However",
+              "Finally"
+            ],
+            "answer": "However",
+            "id": "C2-WRI-01-Q2"
+          }
+        ],
+        "animation": [
+          {
+            "target": "Coach",
+            "action": "fade_in",
+            "text": "Guiding through Writing focus 1."
+          }
+        ],
+        "assets": {
+          "audio": "",
+          "image": ""
+        }
+      },
+      {
+        "id": "C2-WRI-02",
+        "title": "Writing Studio 2",
+        "objectives": [
+          "Apply writing strategies for C2 contexts",
+          "Build confidence with scaffolded writing tasks"
+        ],
+        "instructions": "Work through the prompts, then submit your reflections for writing mastery.",
+        "dialogue": "Coach: Let's push your writing into the C2 zone.",
+        "text_sample": "Sample text for Writing at C2 lesson 2.",
+        "questions": [
+          {
+            "type": "text",
+            "prompt": "Draft a concise thesis sentence. (C2 Writing scenario 2)",
+            "answer": "clear thesis",
+            "id": "C2-WRI-02-Q1"
+          },
+          {
+            "type": "mc",
+            "prompt": "Choose the best transition word for contrast. (C2 Writing scenario 2)",
+            "options": [
+              "Moreover",
+              "Therefore",
+              "However",
+              "Finally"
+            ],
+            "answer": "However",
+            "id": "C2-WRI-02-Q2"
+          }
+        ],
+        "animation": [
+          {
+            "target": "Coach",
+            "action": "fade_in",
+            "text": "Guiding through Writing focus 2."
+          }
+        ],
+        "assets": {
+          "audio": "",
+          "image": ""
+        }
+      }
+    ]
+  }
+}
