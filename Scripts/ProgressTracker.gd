@@ -34,7 +34,7 @@ func get_skill_progress(level: String, skill: String) -> float:
 		return 0.0
 	if not progress_data[level].has(skill):
 		return 0.0
-	var data := progress_data[level][skill]
+	var data: Dictionary = progress_data[level][skill]
 	if data["attempted"] == 0:
 		return 0.0
 	return float(data["correct"]) / float(data["attempted"])
