@@ -109,31 +109,6 @@ func _update_flow_lines(viewport_size: Vector2) -> void:
 	flow_color.a = 0.08
 	flow_lines.modulate = flow_color
 
-func _connect_virtual_keyboard(field: LineEdit) -> void:
-	field.mouse_filter = Control.MOUSE_FILTER_STOP
-	field.focus_mode = Control.FOCUS_ALL
-	field.focus_entered.connect(func():
-		_show_virtual_keyboard(field)
-	)
-	field.focus_exited.connect(_hide_virtual_keyboard)
-	field.gui_input.connect(func(event: InputEvent):
-		if (event is InputEventScreenTouch or event is InputEventMouseButton) and event.pressed:
-			field.grab_focus()
-			_show_virtual_keyboard(field)
-	)
-
-func _show_virtual_keyboard(field: LineEdit) -> void:
-	if not DisplayServer.has_feature(DisplayServer.FEATURE_VIRTUAL_KEYBOARD):
-		return
-	var rect := field.get_global_rect()
-	var rect_i := Rect2i(Vector2i(rect.position), Vector2i(rect.size))
-	DisplayServer.virtual_keyboard_show(field.text, rect_i)
-
-func _hide_virtual_keyboard() -> void:
-	if not DisplayServer.has_feature(DisplayServer.FEATURE_VIRTUAL_KEYBOARD):
-		return
-	DisplayServer.virtual_keyboard_hide()
-
 func _adjust_layout_margins(viewport_size: Vector2) -> void:
 	var horizontal_margin := clampf(viewport_size.x * LAYOUT_MARGIN_RATIO.x, LAYOUT_MARGIN_MIN.x, LAYOUT_MARGIN_MAX.x)
 	var vertical_margin := clampf(viewport_size.y * LAYOUT_MARGIN_RATIO.y, LAYOUT_MARGIN_MIN.y, LAYOUT_MARGIN_MAX.y)
