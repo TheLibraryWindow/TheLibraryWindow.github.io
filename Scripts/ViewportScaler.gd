@@ -28,8 +28,8 @@ func _update_viewport() -> void:
 func _get_device_view_size() -> Vector2i:
 	var win_size: Vector2i = DisplayServer.window_get_size()
 	if OS.has_feature("web") and Engine.has_singleton("JavaScriptBridge"):
-		var js_bridge := Engine.get_singleton("JavaScriptBridge")
-		var js_result := js_bridge.call("eval", JS_VIEWPORT_QUERY, true)
+		var js_bridge: Object = Engine.get_singleton("JavaScriptBridge")
+		var js_result: Variant = js_bridge.call("eval", JS_VIEWPORT_QUERY, true)
 		if js_result is Dictionary:
 			var width := int(js_result.get("width", 0))
 			var height := int(js_result.get("height", 0))
