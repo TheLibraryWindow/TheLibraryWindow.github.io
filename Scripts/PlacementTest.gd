@@ -24,6 +24,7 @@ var answers: Dictionary = {}
 var current_index := 0
 var current_level_index := 5  # Start at C2 (index 5), 0=A1, 1=A2, 2=B1, 3=B2, 4=C1, 5=C2
 const LEVELS := ["A1", "A2", "B1", "B2", "C1", "C2"]
+var ended_early: bool = false
 
 func _ready() -> void:
 	summary_panel.visible = false
@@ -116,6 +117,8 @@ func _clear_options() -> void:
 		child.queue_free()
 
 func _render_question() -> void:
+	if ended_early:
+		return
 	if questions.is_empty():
 		return
 	var question: Dictionary = questions[current_index]
@@ -190,6 +193,8 @@ func _render_question() -> void:
 func _on_next() -> void:
 	if not _save_current_answer(true):
 		return
+	if _maybe_end_early():
+		return
 	if current_index == questions.size() - 1:
 		_submit_test()
 		return
@@ -214,25 +219,48 @@ func _save_current_answer(require_input: bool) -> bool:
 		return false
 	if not value.is_empty():
 		answers[qid] = value
-		_check_and_update_level(question, value)
+		_update_level_indicator()
 	return true
 
 func _submit_test() -> void:
 	if answers.size() < questions.size():
 		status_label.text = "Answer all questions before submitting."
 		return
-	var result: Dictionary = placement_manager.grade(answers)
+	var result: Dictionary = placement_manager.grade(answers, questions)
 	_show_summary(result)
 
 func _show_summary(result: Dictionary) -> void:
 	$Main/VBox/QuestionPanel.visible = false
 	$Main/VBox/ProgressRow.visible = false
 	summary_panel.visible = true
-	summary_result.text = "Score: %d / %d (%.1f%%)" % [result.get("correct", 0), result.get("total", 0), result.get("percentage", 0.0)]
+	var points: float = result.get("weighted_correct", 0.0)
+	var points_total: float = maxf(0.001, result.get("weighted_total", 1.0))
+	var raw_correct: int = int(result.get("correct", 0))
+	var raw_total: int = int(result.get("total", 0))
+	var pct: float = result.get("percentage", 0.0)
+	summary_result.text = "Points: %.1f / %.1f (%.1f%%)\nCorrect: %d / %d" % [points, points_total, pct, raw_correct, raw_total]
 	summary_level.text = "Assigned level: %s" % result.get("level", "A1")
 	enter_dashboard_button.text = "Enter Hub"
 	enter_dashboard_button.set_meta("score", result.get("percentage", 0.0))
 	enter_dashboard_button.set_meta("level", result.get("level", "A1"))
+
+func _maybe_end_early() -> bool:
+	# Evaluate current answers with the official grading (band caps) and stop early if a band cap is triggered.
+	var answered_questions: Array = []
+	for q in questions:
+		var aqid: String = q.get("id", "")
+		if answers.has(aqid):
+			answered_questions.append(q)
+	
+	if answered_questions.is_empty():
+		return false
+	
+	var provisional: Dictionary = placement_manager.grade(answers, answered_questions)
+	if provisional.get("band_stop_triggered", false):
+		ended_early = true
+		_show_summary(provisional)
+		return true
+	return false
 
 func _on_enter_dashboard() -> void:
 	var score := float(enter_dashboard_button.get_meta("score"))
@@ -390,17 +418,28 @@ func _update_level_indicator() -> void:
 	if not is_instance_valid(level_indicator):
 		return
 	
-	# Always show a level (starts at C2, minimum A1)
-	var level: String = LEVELS[clamp(current_level_index, 0, LEVELS.size() - 1)]
+	# Provisional level based on answered questions using the official grading logic
+	var answered_questions: Array = []
+	for q in questions:
+		var aqid: String = q.get("id", "")
+		if answers.has(aqid):
+			answered_questions.append(q)
+	
+	if answered_questions.is_empty():
+		level_indicator.text = "—"
+		level_indicator.modulate = Color(0.7, 0.7, 0.7, 1.0)
+		return
+	
+	var provisional: Dictionary = placement_manager.grade(answers, answered_questions)
+	var level: String = provisional.get("level", "A1")
 	var new_text := level
 	var new_color: Color
 	
-	# Color based on level - green for B1/B2/C1/C2
 	match level:
 		"A1", "A2":
-			new_color = Color(0.6, 0.8, 1.0, 1.0)  # Blue
+			new_color = Color(0.6, 0.8, 1.0, 1.0)
 		"B1", "B2", "C1", "C2":
-			new_color = Color(0.4, 0.9, 0.5, 1.0)  # Green
+			new_color = Color(0.4, 0.9, 0.5, 1.0)
 		_:
 			new_color = Color(0.6, 0.9, 1, 1)
 	

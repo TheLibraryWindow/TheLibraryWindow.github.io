@@ -3,15 +3,15 @@
 [ext_resource type="Script" uid="uid://cvwpateelghk5" path="res://Scripts/PlacementTest.gd" id="1"]
 
 [sub_resource type="StyleBoxFlat" id="1"]
+content_margin_left = 18.0
+content_margin_top = 18.0
+content_margin_right = 18.0
+content_margin_bottom = 18.0
 bg_color = Color(0.12, 0.16, 0.22, 1)
 corner_radius_top_left = 14
 corner_radius_top_right = 14
-corner_radius_bottom_left = 14
 corner_radius_bottom_right = 14
-content_margin_left = 18.0
-content_margin_right = 18.0
-content_margin_top = 18.0
-content_margin_bottom = 18.0
+corner_radius_bottom_left = 14
 
 [node name="PlacementTest" type="Control"]
 layout_mode = 3
@@ -27,6 +27,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.04, 0.06, 0.11, 1)
 
 [node name="Main" type="MarginContainer" parent="."]
@@ -34,9 +36,11 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/margin_left = 48
-theme_override_constants/margin_right = 48
 theme_override_constants/margin_top = 36
+theme_override_constants/margin_right = 48
 theme_override_constants/margin_bottom = 36
 
 [node name="VBox" type="VBoxContainer" parent="Main"]
