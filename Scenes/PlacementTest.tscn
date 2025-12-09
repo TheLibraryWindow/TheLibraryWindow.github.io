@@ -1,6 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://dy1pmgmv47rjj"]
+[gd_scene load_steps=3 format=3 uid="uid://dy1pmgmv47rjj"]
 
-[ext_resource type="Script" path="res://Scripts/PlacementTest.gd" id="1"]
+[ext_resource type="Script" uid="uid://cvwpateelghk5" path="res://Scripts/PlacementTest.gd" id="1"]
+
+[sub_resource type="StyleBoxFlat" id="1"]
+bg_color = Color(0.12, 0.16, 0.22, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_left = 14
+corner_radius_bottom_right = 14
+content_margin_left = 18.0
+content_margin_right = 18.0
+content_margin_top = 18.0
+content_margin_bottom = 18.0
 
 [node name="PlacementTest" type="Control"]
 layout_mode = 3
@@ -13,40 +24,55 @@ script = ExtResource("1")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color(0.04, 0.06, 0.11, 1)
 
 [node name="Main" type="MarginContainer" parent="."]
 layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_minimum_size = Vector2(0, 0)
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_right = 48
+theme_override_constants/margin_top = 36
+theme_override_constants/margin_bottom = 36
 
 [node name="VBox" type="VBoxContainer" parent="Main"]
+custom_minimum_size = Vector2(840, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_minimum_size = Vector2(840, 0)
+theme_override_constants/separation = 12
 
 [node name="Heading" type="Label" parent="Main/VBox"]
 layout_mode = 2
-text = "SkillPath Placement"
 theme_override_font_sizes/font_size = 32
+text = "SkillPath Placement"
 
 [node name="Subheading" type="Label" parent="Main/VBox"]
+modulate = Color(0.7, 0.9, 1, 1)
 layout_mode = 2
 text = "35-question placement across A1–C2"
-modulate = Color(0.7, 0.9, 1, 1)
 
 [node name="ProgressRow" type="HBoxContainer" parent="Main/VBox"]
-layout_mode = 2
 custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="LevelIndicator" type="Label" parent="Main/VBox/ProgressRow"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.9, 1, 1)
+theme_override_font_sizes/font_size = 24
+text = "—"
+horizontal_alignment = 1
 
 [node name="QuestionCounter" type="Label" parent="Main/VBox/ProgressRow"]
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 text = "Question 1 / 35"
-custom_minimum_size = Vector2(150, 0)
 
 [node name="ProgressBar" type="ProgressBar" parent="Main/VBox/ProgressRow"]
 layout_mode = 2
@@ -56,45 +82,44 @@ value = 1.0
 [node name="QuestionPanel" type="PanelContainer" parent="Main/VBox"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_styles/panel = SubResource("1")
 
 [node name="Card" type="VBoxContainer" parent="Main/VBox/QuestionPanel"]
+custom_minimum_size = Vector2(0, 420)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_minimum_size = Vector2(0, 420)
+theme_override_constants/separation = 8
 
 [node name="SkillLabel" type="Label" parent="Main/VBox/QuestionPanel/Card"]
-layout_mode = 2
-text = "Level · Skill"
 modulate = Color(0.8, 0.9, 1, 1)
-
+layout_mode = 2
 theme_override_font_sizes/font_size = 20
+text = "Level · Skill"
 
 [node name="Prompt" type="RichTextLabel" parent="Main/VBox/QuestionPanel/Card"]
 layout_mode = 2
 size_flags_vertical = 3
-fit_content = true
+bbcode_enabled = true
 text = "Question prompt"
+fit_content = true
 scroll_active = false
 
 [node name="Options" type="VBoxContainer" parent="Main/VBox/QuestionPanel/Card"]
+custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_minimum_size = Vector2(0, 200)
 
 [node name="TextAnswer" type="LineEdit" parent="Main/VBox/QuestionPanel/Card"]
+visible = false
 layout_mode = 2
 placeholder_text = "Type your answer"
-visible = false
 
 [node name="NavButtons" type="HBoxContainer" parent="Main/VBox/QuestionPanel/Card"]
-layout_mode = 2
 custom_minimum_size = Vector2(0, 48)
-
-[node name="PrevButton" type="Button" parent="Main/VBox/QuestionPanel/Card/NavButtons"]
 layout_mode = 2
-text = "Back"
+theme_override_constants/separation = 12
 
 [node name="NextButton" type="Button" parent="Main/VBox/QuestionPanel/Card/NavButtons"]
 layout_mode = 2
@@ -102,13 +127,12 @@ size_flags_horizontal = 3
 text = "Next"
 
 [node name="StatusLabel" type="Label" parent="Main/VBox"]
-layout_mode = 2
 modulate = Color(1, 0.6, 0.4, 1)
-text = ""
+layout_mode = 2
 
 [node name="SummaryPanel" type="PanelContainer" parent="Main/VBox"]
-layout_mode = 2
 visible = false
+layout_mode = 2
 
 [node name="ResultVBox" type="VBoxContainer" parent="Main/VBox/SummaryPanel"]
 layout_mode = 2
@@ -124,6 +148,5 @@ text = "Assigned level: A1"
 
 [node name="EnterButton" type="Button" parent="Main/VBox/SummaryPanel/ResultVBox"]
 layout_mode = 2
-text = "Enter Hub"
 size_flags_horizontal = 3
-*** End File
+text = "Enter Hub"

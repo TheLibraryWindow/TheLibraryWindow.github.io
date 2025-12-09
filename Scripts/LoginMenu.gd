@@ -48,6 +48,11 @@ func _ready() -> void:
 	_setup_auth()
 	login_button.pressed.connect(_handle_login)
 	register_button.pressed.connect(_handle_register)
+	# Connect Enter key on input fields
+	login_username.text_submitted.connect(_on_login_username_submitted)
+	login_password.text_submitted.connect(_handle_login)
+	register_username.text_submitted.connect(_on_register_username_submitted)
+	register_password.text_submitted.connect(_handle_register)
 	timer.timeout.connect(_cycle_tagline)
 	get_viewport().size_changed.connect(_on_viewport_resized)
 	_apply_responsive_layout()
@@ -119,15 +124,23 @@ func _adjust_layout_margins(viewport_size: Vector2) -> void:
 	layout_container.add_theme_constant_override("margin_top", roundi(vertical_margin))
 	layout_container.add_theme_constant_override("margin_bottom", roundi(vertical_margin))
 
-func _handle_login() -> void:
+func _handle_login(_text: String = "") -> void:
 	login_status.text = ""
 	if auth_manager.authenticate(login_username.text, login_password.text):
 		return
 	# Errors are handled via signal
 
-func _handle_register() -> void:
+func _handle_register(_text: String = "") -> void:
 	register_status.text = ""
 	auth_manager.register_user(register_username.text, register_password.text)
+
+func _on_login_username_submitted(_text: String) -> void:
+	# Move focus to password field when Enter is pressed on username
+	login_password.grab_focus()
+
+func _on_register_username_submitted(_text: String) -> void:
+	# Move focus to password field when Enter is pressed on username
+	register_password.grab_focus()
 
 func _on_user_registered(username: String) -> void:
 	register_status.text = "Welcome, %s. You can log in now." % username

@@ -1,308 +1,949 @@
 {
   "questions": [
     {
-      "id": "A1-01",
+      "id": "1a",
       "level_hint": "A1",
       "skill": "Grammar",
       "type": "mc",
-      "prompt": "Choose the correct sentence.",
-      "options": ["She go to school.", "She goes to school.", "She going to school.", "She gone to school."],
-      "answer": "She goes to school."
+      "prompt": "Where is the cat?",
+      "options": ["on the table", "quickly", "yesterday", "loudly"],
+      "answer": "on the table"
     },
     {
-      "id": "A1-02",
+      "id": "1b",
       "level_hint": "A1",
-      "skill": "Vocabulary",
-      "type": "text",
-      "prompt": "Fill in the missing word: I ____ tea every morning.",
-      "answer": "drink"
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "The bag is ___ the chair.",
+      "options": ["on", "very", "run", "blue"],
+      "answer": "on"
     },
     {
-      "id": "A1-03",
+      "id": "1c",
       "level_hint": "A1",
-      "skill": "Reading",
+      "skill": "Grammar",
       "type": "mc",
-      "prompt": "The sign says 'Exit'. What does it mean?",
-      "options": ["Go faster", "Leave here", "Be quiet", "Help me"],
-      "answer": "Leave here"
+      "prompt": "Choose the correct option: I have a ____.",
+      "options": ["pencil", "slowly", "running", "big"],
+      "answer": "pencil"
     },
     {
-      "id": "A1-04",
+      "id": "2a",
       "level_hint": "A1",
-      "skill": "Listening",
-      "type": "mc",
-      "prompt": "Which word is a day of the week?",
-      "options": ["May", "Cold", "Tuesday", "Soon"],
-      "answer": "Tuesday"
-    },
-    {
-      "id": "A2-01",
-      "level_hint": "A2",
       "skill": "Grammar",
       "type": "mc",
-      "prompt": "Choose the best option: If it ____ tomorrow, we'll stay home.",
-      "options": ["rain", "rains", "will rain", "raining"],
-      "answer": "rains"
+      "prompt": "What time is it?",
+      "options": ["It's six o'clock", "Six the clock", "Six time", "On six"],
+      "answer": "It's six o'clock"
     },
     {
-      "id": "A2-02",
-      "level_hint": "A2",
-      "skill": "Vocabulary",
-      "type": "text",
-      "prompt": "Give one synonym for 'angry'.",
-      "answer": "mad"
-    },
-    {
-      "id": "A2-03",
-      "level_hint": "A2",
-      "skill": "Reading",
-      "type": "mc",
-      "prompt": "'Employees must badge in'. Who is this message for?",
-      "options": ["Customers", "Workers", "Students", "Visitors"],
-      "answer": "Workers"
-    },
-    {
-      "id": "A2-04",
-      "level_hint": "A2",
-      "skill": "Listening",
-      "type": "mc",
-      "prompt": "Choose the correct response: 'Would you like some coffee?'",
-      "options": ["Yes, please.", "No, I do.", "She does.", "We going."],
-      "answer": "Yes, please."
-    },
-    {
-      "id": "B1-01",
-      "level_hint": "B1",
+      "id": "2b",
+      "level_hint": "A1",
       "skill": "Grammar",
       "type": "mc",
-      "prompt": "Select the correct reported speech: 'I am tired,' she said.",
-      "options": ["She said she is tired.", "She said she was tired.", "She say she tired.", "She told she was tired."],
-      "answer": "She said she was tired."
+      "prompt": "I ____ breakfast at 8.",
+      "options": ["eat", "eats", "eaten", "eating"],
+      "answer": "eat"
     },
     {
-      "id": "B1-02",
-      "level_hint": "B1",
-      "skill": "Vocabulary",
-      "type": "text",
-      "prompt": "What phrasal verb means 'to cancel an event'?",
-      "answer": "call off"
-    },
-    {
-      "id": "B1-03",
-      "level_hint": "B1",
-      "skill": "Reading",
-      "type": "mc",
-      "prompt": "A review says 'service was prompt'. What does 'prompt' mean here?",
-      "options": ["Slow", "Expensive", "Friendly", "Quick"],
-      "answer": "Quick"
-    },
-    {
-      "id": "B1-04",
-      "level_hint": "B1",
-      "skill": "Listening",
-      "type": "mc",
-      "prompt": "During a meeting you hear 'Let's circle back on Friday'. What should you do?",
-      "options": ["Cancel Friday", "Meet again Friday", "Ignore it", "Send gifts"],
-      "answer": "Meet again Friday"
-    },
-    {
-      "id": "B1-05",
-      "level_hint": "B1",
-      "skill": "Writing",
-      "type": "text",
-      "prompt": "Write a linking word that contrasts two ideas.",
-      "answer": "however"
-    },
-    {
-      "id": "B2-01",
-      "level_hint": "B2",
-      "skill": "Grammar",
-      "type": "mc",
-      "prompt": "Choose the sentence with correct inversion.",
-      "options": ["Not only she laughed, but also cried.", "Not only did she laugh, but she also cried.", "Only not she laughed, also cried.", "She not only laughed, did also cry."],
-      "answer": "Not only did she laugh, but she also cried."
-    },
-    {
-      "id": "B2-02",
-      "level_hint": "B2",
-      "skill": "Vocabulary",
-      "type": "text",
-      "prompt": "Give a word meaning 'careful and using good judgment'.",
-      "answer": "prudent"
-    },
-    {
-      "id": "B2-03",
-      "level_hint": "B2",
-      "skill": "Reading",
-      "type": "mc",
-      "prompt": "In a news article 'the policy was rescinded'. What happened?",
-      "options": ["It was delayed", "It was canceled", "It was funded", "It was accepted"],
-      "answer": "It was canceled"
-    },
-    {
-      "id": "B2-04",
-      "level_hint": "B2",
-      "skill": "Listening",
-      "type": "mc",
-      "prompt": "'Can you put me through to finance?' What is requested?",
-      "options": ["Transfer a call", "Send an email", "Pay a bill", "Arrange travel"],
-      "answer": "Transfer a call"
-    },
-    {
-      "id": "B2-05",
-      "level_hint": "B2",
-      "skill": "Writing",
-      "type": "text",
-      "prompt": "Name a formal closing for a business email.",
-      "answer": "kind regards"
-    },
-    {
-      "id": "C1-01",
-      "level_hint": "C1",
-      "skill": "Grammar",
-      "type": "mc",
-      "prompt": "Select the sentence with the correct use of a reduced relative clause.",
-      "options": ["The book written by her is best.", "The book writing by her is best.", "The written book by her is best.", "The book was written she is best."],
-      "answer": "The book written by her is best."
-    },
-    {
-      "id": "C1-02",
-      "level_hint": "C1",
-      "skill": "Vocabulary",
-      "type": "text",
-      "prompt": "Provide a noun meaning 'the highest point of achievement'.",
-      "answer": "pinnacle"
-    },
-    {
-      "id": "C1-03",
-      "level_hint": "C1",
-      "skill": "Reading",
-      "type": "mc",
-      "prompt": "In context, 'her analysis was trenchant' suggests it was...",
-      "options": ["Vague", "Harsh but precise", "Late", "Supportive"],
-      "answer": "Harsh but precise"
-    },
-    {
-      "id": "C1-04",
-      "level_hint": "C1",
-      "skill": "Listening",
-      "type": "mc",
-      "prompt": "You hear 'Let's table this' in a US meeting. What happens?",
-      "options": ["Discuss now", "Delay the topic", "Vote immediately", "Cancel the meeting"],
-      "answer": "Delay the topic"
-    },
-    {
-      "id": "C1-05",
-      "level_hint": "C1",
-      "skill": "Writing",
-      "type": "text",
-      "prompt": "Give one cohesive device that signals cause and effect.",
-      "answer": "therefore"
-    },
-    {
-      "id": "C2-01",
-      "level_hint": "C2",
-      "skill": "Grammar",
-      "type": "mc",
-      "prompt": "Choose the sentence that best demonstrates nominalisation.",
-      "options": ["We concluded the deal.", "The conclusion of the deal surprised us.", "We were concluding the deal.", "We will conclude the deal."],
-      "answer": "The conclusion of the deal surprised us."
-    },
-    {
-      "id": "C2-02",
-      "level_hint": "C2",
-      "skill": "Vocabulary",
-      "type": "text",
-      "prompt": "Provide a precise synonym for 'ubiquitous'.",
-      "answer": "omnipresent"
-    },
-    {
-      "id": "C2-03",
-      "level_hint": "C2",
-      "skill": "Reading",
-      "type": "mc",
-      "prompt": "In academic writing, what does 'salient' mean?",
-      "options": ["Difficult", "Irrelevant", "Prominent", "Sequential"],
-      "answer": "Prominent"
-    },
-    {
-      "id": "C2-04",
-      "level_hint": "C2",
-      "skill": "Listening",
-      "type": "mc",
-      "prompt": "During a lecture you hear 'Let's problematize this assumption'. What is the speaker doing?",
-      "options": ["Agreeing", "Questioning", "Ignoring", "Summarizing"],
-      "answer": "Questioning"
-    },
-    {
-      "id": "C2-05",
-      "level_hint": "C2",
-      "skill": "Writing",
-      "type": "text",
-      "prompt": "Give a discourse marker suitable for contrasting research findings in a journal article.",
-      "answer": "conversely"
-    },
-    {
-      "id": "MIX-01",
-      "level_hint": "B1",
-      "skill": "Listening",
-      "type": "mc",
-      "prompt": "'I'll pencil you in for 3 PM.' What does this imply?",
-      "options": ["The meeting is certain", "It's a tentative plan", "Meeting cancelled", "Need payment"],
-      "answer": "It's a tentative plan"
-    },
-    {
-      "id": "MIX-02",
-      "level_hint": "B2",
-      "skill": "Vocabulary",
-      "type": "text",
-      "prompt": "Write the adjective meaning 'able to recover quickly'.",
-      "answer": "resilient"
-    },
-    {
-      "id": "MIX-03",
-      "level_hint": "C1",
-      "skill": "Reading",
-      "type": "mc",
-      "prompt": "In a research abstract, 'mitigate' most nearly means...",
-      "options": ["Measure", "Reduce", "Repeat", "Predict"],
-      "answer": "Reduce"
-    },
-    {
-      "id": "MIX-04",
-      "level_hint": "A2",
-      "skill": "Grammar",
-      "type": "mc",
-      "prompt": "Choose the correct comparative form: 'This exercise is ____ than the last.'",
-      "options": ["difficult", "more difficult", "difficulter", "most difficult"],
-      "answer": "more difficult"
-    },
-    {
-      "id": "MIX-05",
-      "level_hint": "C2",
-      "skill": "Grammar",
-      "type": "mc",
-      "prompt": "Identify the sentence with a cleft structure.",
-      "options": ["The manager approved the plan.", "It was the manager who approved the plan.", "The plan was approved.", "Approved the plan the manager."],
-      "answer": "It was the manager who approved the plan."
-    },
-    {
-      "id": "MIX-06",
-      "level_hint": "B2",
-      "skill": "Reading",
-      "type": "mc",
-      "prompt": "'The board balked at the proposal.' What did they do?",
-      "options": ["Accepted it", "Hesitated", "Funded it", "Ignored it"],
-      "answer": "Hesitated"
-    },
-    {
-      "id": "MIX-07",
+      "id": "2c",
       "level_hint": "A1",
       "skill": "Vocabulary",
       "type": "mc",
-      "prompt": "Which word means the opposite of 'cold'?",
-      "options": ["Hot", "Wet", "Slow", "Late"],
-      "answer": "Hot"
+      "prompt": "Odd one out:",
+      "options": ["cat", "dog", "house", "bird"],
+      "answer": "house"
+    },
+    {
+      "id": "3a",
+      "level_hint": "A1",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "He is my ____.",
+      "options": ["father", "run", "slowly", "red"],
+      "answer": "father"
+    },
+    {
+      "id": "3b",
+      "level_hint": "A1",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "The book is ____ the table.",
+      "options": ["on", "fast", "running", "yesterday"],
+      "answer": "on"
+    },
+    {
+      "id": "3c",
+      "level_hint": "A1",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "Choose the correct sentence:",
+      "options": ["She likes apples", "Apples she likes", "Likes apples she", "She apples likes"],
+      "answer": "She likes apples"
+    },
+    {
+      "id": "4a",
+      "level_hint": "A1",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "She ____ to school.",
+      "options": ["goes", "go", "going", "gone"],
+      "answer": "goes"
+    },
+    {
+      "id": "4b",
+      "level_hint": "A1",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "We live ____ London.",
+      "options": ["in", "at", "to", "for"],
+      "answer": "in"
+    },
+    {
+      "id": "4c",
+      "level_hint": "A1",
+      "skill": "Vocabulary",
+      "type": "mc",
+      "prompt": "Odd one out:",
+      "options": ["mother", "brother", "pencil", "sister"],
+      "answer": "pencil"
+    },
+    {
+      "id": "5a",
+      "level_hint": "A1",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "The children are ____ in the garden.",
+      "options": ["playing", "play", "plays", "played"],
+      "answer": "playing"
+    },
+    {
+      "id": "5b",
+      "level_hint": "A1",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "Choose the correct article: I saw ____ dog.",
+      "options": ["a", "an", "the", "some"],
+      "answer": "a"
+    },
+    {
+      "id": "5c",
+      "level_hint": "A1",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "Complete the sentence: She is very ____.",
+      "options": ["tall", "quickly", "running", "yesterday"],
+      "answer": "tall"
+    },
+    {
+      "id": "6a",
+      "level_hint": "A2",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "I usually ____ TV in the evening.",
+      "options": ["watch", "watching", "watches", "watched"],
+      "answer": "watch"
+    },
+    {
+      "id": "6b",
+      "level_hint": "A2",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "She is very ____.",
+      "options": ["tired", "tiring", "tireful", "tires"],
+      "answer": "tired"
+    },
+    {
+      "id": "6c",
+      "level_hint": "A2",
+      "skill": "Vocabulary",
+      "type": "mc",
+      "prompt": "Odd one out:",
+      "options": ["bus", "train", "tractor", "plane"],
+      "answer": "tractor"
+    },
+    {
+      "id": "7a",
+      "level_hint": "A2",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "I don't have ____ money.",
+      "options": ["any", "some", "many", "few"],
+      "answer": "any"
+    },
+    {
+      "id": "7b",
+      "level_hint": "A2",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "We arrived ____ time for the meeting.",
+      "options": ["on", "at", "in", "for"],
+      "answer": "on"
+    },
+    {
+      "id": "7c",
+      "level_hint": "A2",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "He is feeling very ____.",
+      "options": ["happy", "quickly", "green", "loud"],
+      "answer": "happy"
+    },
+    {
+      "id": "8a",
+      "level_hint": "A2",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "They ____ to Paris last year.",
+      "options": ["travelled", "travel", "travelling", "travels"],
+      "answer": "travelled"
+    },
+    {
+      "id": "8b",
+      "level_hint": "A2",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "I am looking ____ my keys.",
+      "options": ["for", "to", "at", "in"],
+      "answer": "for"
+    },
+    {
+      "id": "8c",
+      "level_hint": "A2",
+      "skill": "Vocabulary",
+      "type": "mc",
+      "prompt": "Odd one out:",
+      "options": ["apple", "banana", "orange", "chicken"],
+      "answer": "chair"
+    },
+    {
+      "id": "9a",
+      "level_hint": "A2",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "I ____ to the cinema yesterday.",
+      "options": ["went", "go", "going", "goes"],
+      "answer": "went"
+    },
+    {
+      "id": "9b",
+      "level_hint": "A2",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "She has lived here ____ 2018.",
+      "options": ["since", "for", "by", "during"],
+      "answer": "since"
+    },
+    {
+      "id": "9c",
+      "level_hint": "A2",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "Identify the mistake:",
+      "options": ["He doesn't like pizza", "He don't like pizza", "He likes pizza", "He is liking pizza"],
+      "answer": "He don't like pizza"
+    },
+    {
+      "id": "10a",
+      "level_hint": "A2",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "Choose the correct question:",
+      "options": ["Where do you live?", "Where you live?", "Where live you?", "You live where?"],
+      "answer": "Where do you live?"
+    },
+    {
+      "id": "10b",
+      "level_hint": "A2",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "The children are playing ____ the park.",
+      "options": ["in", "on", "at", "to"],
+      "answer": "in"
+    },
+    {
+      "id": "10c",
+      "level_hint": "A2",
+      "skill": "Vocabulary",
+      "type": "mc",
+      "prompt": "Odd one out:",
+      "options": ["cat", "dog", "cow", "goldfish"],
+      "answer": "cow"
+    },
+    {
+      "id": "11a",
+      "level_hint": "B1",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "If it rains, we ____ inside.",
+      "options": ["will stay", "stayed", "staying", "stays"],
+      "answer": "will stay"
+    },
+    {
+      "id": "11b",
+      "level_hint": "B1",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "I'm interested ____ art.",
+      "options": ["in", "on", "at", "to"],
+      "answer": "in"
+    },
+    {
+      "id": "11c",
+      "level_hint": "B1",
+      "skill": "Vocabulary",
+      "type": "text",
+      "prompt": "One word fits all three sentences. Enter the single word.\n1) I'm ___ you could make it.\n2) We'd be ___ to help with that.\n3) She felt ___ about the good news.",
+      "answer": "glad",
+      "accepted_answers": ["glad", "pleased", "happy"]
+    },
+    {
+      "id": "12a",
+      "level_hint": "B1",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "The movie was ____ than I expected.",
+      "options": ["better", "good", "best", "well"],
+      "answer": "better"
+    },
+    {
+      "id": "12b",
+      "level_hint": "B1",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "Yesterday, I ____ my wallet.",
+      "options": ["lost", "lose", "losing", "losed"],
+      "answer": "lost"
+    },
+    {
+      "id": "12c",
+      "level_hint": "B1",
+      "skill": "Vocabulary",
+      "type": "mc",
+      "prompt": "Match the meaning: \"climate\".",
+      "options": ["weather conditions", "clothing", "music style", "color"],
+      "answer": "weather conditions"
+    },
+    {
+      "id": "13a",
+      "level_hint": "B1",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "The person ____ called you is my friend.",
+      "options": ["who", "what", "where", "when"],
+      "answer": "who"
+    },
+    {
+      "id": "13b",
+      "level_hint": "B1",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "I ____ eaten.",
+      "options": ["had already", "have already done", "done already", "got already"],
+      "answer": "had already"
+    },
+    {
+      "id": "13c",
+      "level_hint": "B1",
+      "skill": "Vocabulary",
+      "type": "mc",
+      "prompt": "Odd one out:",
+      "options": ["furious", "small", "huge", "tiny"],
+      "answer": "furious"
+    },
+    {
+      "id": "14a",
+      "level_hint": "B1",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "I ____ my homework before dinner.",
+      "options": ["had finished", "finishing", "finishes", "finish"],
+      "answer": "had finished"
+    },
+    {
+      "id": "14b",
+      "level_hint": "B1",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "It's not worth ____.",
+      "options": ["talking", "to talk", "talk", "talked"],
+      "answer": "talking"
+    },
+    {
+      "id": "14c",
+      "level_hint": "B1",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "Identify the mistake:",
+      "options": ["She explained the story to me", "She explained me the story", "She told me the story", "She narrated the story"],
+      "answer": "She explained me the story"
+    },
+    {
+      "id": "15a",
+      "level_hint": "B1",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "We were ____ by the news.",
+      "options": ["surprised", "surprising", "surprise", "surprisely"],
+      "answer": "surprised"
+    },
+    {
+      "id": "15b",
+      "level_hint": "B1",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "The more you practice, the ____ you become.",
+      "options": ["better", "good", "best", "well"],
+      "answer": "better"
+    },
+    {
+      "id": "15c",
+      "level_hint": "B1",
+      "skill": "Vocabulary",
+      "type": "text",
+      "prompt": "One word fits all three sentences. Enter the single word.\n1) We serve a very ___ cup of coffee here.\n2) The argument was ___ and well-supported.\n3) The device is designed to be ___ enough for field work.",
+      "answer": "robust",
+      "accepted_answers": ["robust", "strong", "sturdy", "durable", "tough"]
+    },
+    {
+      "id": "16a",
+      "level_hint": "B2",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "I would travel if I ____ time.",
+      "options": ["had", "have", "having", "will have"],
+      "answer": "had"
+    },
+    {
+      "id": "16b",
+      "level_hint": "B2",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "She denied ____ the mistake.",
+      "options": ["making", "to make", "made", "make"],
+      "answer": "making"
+    },
+    {
+      "id": "16c",
+      "level_hint": "B2",
+      "skill": "Vocabulary",
+      "type": "mc",
+      "prompt": "Odd one out:",
+      "options": ["clarify", "confuse", "explain", "elucidate"],
+      "answer": "confuse"
+    },
+    {
+      "id": "17a",
+      "level_hint": "B2",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "The project, ____ was difficult, finished early.",
+      "options": ["which", "who", "where", "what"],
+      "answer": "which"
+    },
+    {
+      "id": "17b",
+      "level_hint": "B2",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "Identify the mistake:",
+      "options": ["He suggested leaving early", "He suggested to leave early", "He suggested leave early", "He suggested that we leave early"],
+      "answer": "He suggested to leave early"
+    },
+    {
+      "id": "17c",
+      "level_hint": "B2",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "Complete: They thanked her ____ the help.",
+      "options": ["for", "to", "at", "in"],
+      "answer": "for"
+    },
+    {
+      "id": "18a",
+      "level_hint": "B2",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "The harder he works, the ____ he succeeds.",
+      "options": ["more", "much", "most", "many"],
+      "answer": "more"
+    },
+    {
+      "id": "18b",
+      "level_hint": "B2",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "It is essential ____ attention.",
+      "options": ["to pay", "paying", "pay", "paid"],
+      "answer": "to pay"
+    },
+    {
+      "id": "18c",
+      "level_hint": "B2",
+      "skill": "Vocabulary",
+      "type": "mc",
+      "prompt": "Odd one out:",
+      "options": ["enhance", "reduce", "improve", "develop"],
+      "answer": "reduce"
+    },
+    {
+      "id": "19a",
+      "level_hint": "B2",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "She worked ____ a teacher for ten years.",
+      "options": ["as", "like", "similar", "same as"],
+      "answer": "as"
+    },
+    {
+      "id": "19b",
+      "level_hint": "B2",
+      "skill": "Vocabulary",
+      "type": "mc",
+      "prompt": "Choose the best collocation: heavy ____.",
+      "options": ["rain", "apple", "pencil", "top"],
+      "answer": "rain"
+    },
+    {
+      "id": "19c",
+      "level_hint": "B2",
+      "skill": "Vocabulary",
+      "type": "mc",
+      "prompt": "Odd one out:",
+      "options": ["research", "information", "evidence", "opinion"],
+      "answer": "opinion"
+    },
+    {
+      "id": "20a",
+      "level_hint": "B2",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "We need someone who can work ____ pressure.",
+      "options": ["under", "between", "for", "above"],
+      "answer": "under"
+    },
+    {
+      "id": "20b",
+      "level_hint": "B2",
+      "skill": "Vocabulary",
+      "type": "mc",
+      "prompt": "Launch means:",
+      "options": ["start or release", "throw hard", "close completely", "search"],
+      "answer": "start or release"
+    },
+    {
+      "id": "20c",
+      "level_hint": "B2",
+      "skill": "Vocabulary",
+      "type": "text",
+      "prompt": "One word fits all three sentences. Enter the single word.\n1) She was ___ about checking every detail twice.\n2) He gave a ___ response to avoid errors.\n3) The lab requires ___ record-keeping.",
+      "answer": "meticulous",
+      "accepted_answers": ["meticulous", "scrupulous", "thorough", "careful"]
+    },
+    {
+      "id": "21a",
+      "level_hint": "B2",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "He is responsible ____ completing the project.",
+      "options": ["for", "to", "at", "in"],
+      "answer": "for"
+    },
+    {
+      "id": "21b",
+      "level_hint": "B2",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "Complete: I wish I ____ studied harder.",
+      "options": ["had", "have", "will", "would"],
+      "answer": "had"
+    },
+    {
+      "id": "21c",
+      "level_hint": "B2",
+      "skill": "Vocabulary",
+      "type": "mc",
+      "prompt": "Odd one out:",
+      "options": ["accurate", "precise", "exact", "fast"],
+      "answer": "fast"
+    },
+    {
+      "id": "22a",
+      "level_hint": "B2",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "If I ____ earlier, I would have caught the train.",
+      "options": ["had left", "have left", "will leave", "leave"],
+      "answer": "had left"
+    },
+    {
+      "id": "22b",
+      "level_hint": "B2",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "Identify the correct preposition: She is keen ____ learning.",
+      "options": ["on", "in", "at", "to"],
+      "answer": "on"
+    },
+    {
+      "id": "22c",
+      "level_hint": "B2",
+      "skill": "Vocabulary",
+      "type": "mc",
+      "prompt": "Odd one out:",
+      "options": ["running", "jumping", "quickly", "walking"],
+      "answer": "quickly"
+    },
+    {
+      "id": "23a",
+      "level_hint": "B2",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "He suggested ____ the meeting to tomorrow.",
+      "options": ["postponing", "to postpone", "postpone", "postponed"],
+      "answer": "postponing"
+    },
+    {
+      "id": "23b",
+      "level_hint": "B2",
+      "skill": "Vocabulary",
+      "type": "mc",
+      "prompt": "Choose the collocation most appropriate for academic/neutral writing (not informal):",
+      "options": ["compelling evidence", "strong coffee", "fast decision", "heavy device"],
+      "answer": "compelling evidence"
+    },
+    {
+      "id": "23c",
+      "level_hint": "B2",
+      "skill": "Vocabulary",
+      "type": "mc",
+      "prompt": "Odd one out:",
+      "options": ["reliable", "dependable", "trustworthy", "encumbered"],
+      "answer": "encumbered"
+    },
+    {
+      "id": "24a",
+      "level_hint": "B2",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "The report was submitted ____ the deadline.",
+      "options": ["before", "after", "at", "on"],
+      "answer": "before"
+    },
+    {
+      "id": "24b",
+      "level_hint": "B2",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "Complete: I am looking forward ____ the trip.",
+      "options": ["to", "for", "on", "at"],
+      "answer": "to"
+    },
+    {
+      "id": "24c",
+      "level_hint": "B2",
+      "skill": "Vocabulary",
+      "type": "mc",
+      "prompt": "Odd one out:",
+      "options": ["satisfied", "content", "pleased", "apathetic"],
+      "answer": "apathetic"
+    },
+    {
+      "id": "25a",
+      "level_hint": "B2",
+      "skill": "Vocabulary",
+      "type": "mc",
+      "prompt": "The new policy aims to reduce ____ waste.",
+      "options": ["food", "car", "house", "pencil"],
+      "answer": "food"
+    },
+    {
+      "id": "25b",
+      "level_hint": "B2",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "Identify the mistake:",
+      "options": ["He is used to getting up early", "He is used get up early", "He used to get up early", "He uses to get up early"],
+      "answer": "He is used get up early"
+    },
+    {
+      "id": "25c",
+      "level_hint": "B2",
+      "skill": "Vocabulary",
+      "type": "text",
+      "prompt": "One word fits all three sentences. Enter the single word.\n1) The plot was intricate and ___.\n2) They navigated a maze of ___ regulations.\n3) The watch has an ___ mechanism inside.",
+      "answer": "complex",
+      "accepted_answers": ["complex", "intricate"]
+    },
+    {
+      "id": "26a",
+      "level_hint": "C1",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "The match was postponed ____ the weather.",
+      "options": ["due to", "despite", "although", "even"],
+      "answer": "due to"
+    },
+    {
+      "id": "26b",
+      "level_hint": "C1",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "____ being tired, he finished the work.",
+      "options": ["Despite", "Although", "Because", "Even"],
+      "answer": "Despite"
+    },
+    {
+      "id": "26c",
+      "level_hint": "C1",
+      "skill": "Vocabulary",
+      "type": "text",
+      "prompt": "One word fits all three sentences. Enter the single word.\n1) Customer reviews were ___ about the delay.\n2) He sent an ___ email after the meeting.\n3) The journalist faced an ___ crowd outside.",
+      "answer": "irate",
+      "accepted_answers": ["irate", "furious", "angry", "enraged", "livid", "incensed"]
+    },
+    {
+      "id": "27a",
+      "level_hint": "C1",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "The study ____ several key problems.",
+      "options": ["identifies", "identifying", "identify", "identified to"],
+      "answer": "identifies"
+    },
+    {
+      "id": "27b",
+      "level_hint": "C1",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "Her explanation was difficult to follow ____ its complexity.",
+      "options": ["because of", "because", "due", "for"],
+      "answer": "because of"
+    },
+    {
+      "id": "27c",
+      "level_hint": "C1",
+      "skill": "Vocabulary",
+      "type": "mc",
+      "prompt": "Feasible means:",
+      "options": ["possible", "colourful", "dangerous", "loud"],
+      "answer": "possible"
+    },
+    {
+      "id": "28a",
+      "level_hint": "C1",
+      "skill": "Vocabulary",
+      "type": "text",
+      "prompt": "One word fits all three sentences. Enter the single word.\n1) This was a ___ moment in her career.\n2) The decision proved ___ for the project.\n3) He played a ___ role in the negotiations.",
+      "answer": "pivotal",
+      "accepted_answers": ["pivotal", "crucial", "critical", "vital", "key"]
+    },
+    {
+      "id": "28b",
+      "level_hint": "C1",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "The solution proved ____ effective.",
+      "options": ["highly", "high", "height", "higher"],
+      "answer": "highly"
+    },
+    {
+      "id": "28c",
+      "level_hint": "C1",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "Identify the mistake:",
+      "options": ["The results were surprising", "The results were surprised", "The results surprised us", "The results were surprising us"],
+      "answer": "The results were surprised"
+    },
+    {
+      "id": "29a",
+      "level_hint": "C1",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "It is widely ____ that exercise improves health.",
+      "options": ["accepted", "accepting", "accept", "acceptable"],
+      "answer": "accepted"
+    },
+    {
+      "id": "29b",
+      "level_hint": "C1",
+      "skill": "Vocabulary",
+      "type": "mc",
+      "prompt": "Odd one out:",
+      "options": ["hypothesis", "theory", "experiment", "anecdote"],
+      "answer": "anecdote"
+    },
+    {
+      "id": "29c",
+      "level_hint": "C1",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "Choose the correct sentence:",
+      "options": ["This may influence the decision", "Influence may this the decision", "May this decision influence", "Decision influence may this"],
+      "answer": "This may influence the decision"
+    },
+    {
+      "id": "30a",
+      "level_hint": "C1",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "The discovery could ____ our understanding.",
+      "options": ["transform", "transformed", "transforming", "transform to"],
+      "answer": "transform"
+    },
+    {
+      "id": "30b",
+      "level_hint": "C1",
+      "skill": "Vocabulary",
+      "type": "mc",
+      "prompt": "Assumption means:",
+      "options": ["something believed without proof", "a strong argument", "a mistake", "a plan"],
+      "answer": "something believed without proof"
+    },
+    {
+      "id": "30c",
+      "level_hint": "C1",
+      "skill": "Vocabulary",
+      "type": "text",
+      "prompt": "One word fits all three sentences. Enter the single word.\n1) The legal case is highly ___ and spans multiple jurisdictions.\n2) The mechanism inside the clock is surprisingly ___.\n3) Their relationship became increasingly ___ over the years.",
+      "answer": "intricate",
+      "accepted_answers": ["intricate", "complex", "elaborate", "sophisticated", "complicated", "strange", "unusual"]
+    },
+    {
+      "id": "31a",
+      "level_hint": "C2",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "Had I known, I ____ acted differently.",
+      "options": ["would have", "will have", "have", "had"],
+      "answer": "would have"
+    },
+    {
+      "id": "31b",
+      "level_hint": "C2",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "Choose the correct inversion:",
+      "options": ["No sooner had we started than they interrupted", "No sooner we started had than they interrupted", "No sooner had started we than interrupted they", "We had started no sooner than they interrupted"],
+      "answer": "No sooner had we started than they interrupted"
+    },
+    {
+      "id": "31c",
+      "level_hint": "C2",
+      "skill": "Vocabulary",
+      "type": "text",
+      "prompt": "One word fits all three sentences. Enter the single word.\n1) These tools will ___ the onboarding process.\n2) Clear guidelines ___ collaboration across teams.\n3) The new policy aims to ___ faster approvals.",
+      "answer": "facilitate",
+      "accepted_answers": ["facilitate", "enable", "assist", "help", "support", "promote", "catalyze", "expedite", "accelerate", "speed up", "quicken", "accelerate", "hasten", "hurry", "rush", "speed up", "quicken", "accelerate", "hasten", "hurry", "rush"]
+    },
+    {
+      "id": "32a",
+      "level_hint": "C2",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "The writer challenges the assumption ____ progress is invariably positive.",
+      "options": ["that", "who", "what", "where"],
+      "answer": "that"
+    },
+    {
+      "id": "32b",
+      "level_hint": "C2",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "The findings were consistent ____ earlier studies.",
+      "options": ["with", "to", "at", "by"],
+      "answer": "with"
+    },
+    {
+      "id": "32c",
+      "level_hint": "C2",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "Identify the mistake:",
+      "options": ["The results correspond with the theory", "The results correspond to the theory", "The results corresponds with the theory", "The results correspond closely"],
+      "answer": "The results corresponds with the theory"
+    },
+    {
+      "id": "33a",
+      "level_hint": "C2",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "The proposal was rejected ____ concerns over cost.",
+      "options": ["owing to", "despite", "although", "even"],
+      "answer": "owing to"
+    },
+    {
+      "id": "33b",
+      "level_hint": "C2",
+      "skill": "Vocabulary",
+      "type": "text",
+      "prompt": "One word fits all three sentences. Enter the single word.\n1) She felt quietly ___ by the repeated delays.\n2) The committee grew ___ with the vague answers.\n3) He was ___ that his suggestions were ignored.",
+      "answer": "vexed",
+      "accepted_answers": ["vexed", "irritated", "annoyed", "bothered", "irked", "nettled"]
+    },
+    {
+      "id": "33c",
+      "level_hint": "C2",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "The evidence suggests a trend that may ____ future policy decisions.",
+      "options": ["influence", "influencing", "influenced", "influence on"],
+      "answer": "influence"
+    },
+    {
+      "id": "34a",
+      "level_hint": "C2",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "The argument is developed ____ a series of examples.",
+      "options": ["through", "between", "during", "across"],
+      "answer": "through"
+    },
+    {
+      "id": "34b",
+      "level_hint": "C2",
+      "skill": "Vocabulary",
+      "type": "mc",
+      "prompt": "In academic writing, 'viable' most precisely means:",
+      "options": ["capable of working successfully", "very funny", "completely optional", "extremely slow"],
+      "answer": "capable of working successfully"
+    },
+    {
+      "id": "34c",
+      "level_hint": "C2",
+      "skill": "Vocabulary",
+      "type": "mc",
+      "prompt": "Identify the term that does NOT belong in academic discourse:",
+      "options": ["methodology", "hermeneutics", "epistemology", "photosynthesis"],
+      "answer": "photosynthesis"
+    },
+    {
+      "id": "35a",
+      "level_hint": "C2",
+      "skill": "Vocabulary",
+      "type": "text",
+      "prompt": "One word fits all three sentences. Enter the single word.\n1) The professor set out to ___ the core argument.\n2) Please ___ the steps for the new protocol.\n3) The report aims to ___ how the model works.",
+      "answer": "elucidate",
+      "accepted_answers": ["elucidate", "clarify", "explain", "explicate"]
+    },
+    {
+      "id": "35b",
+      "level_hint": "C2",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "Identify the mistake:",
+      "options": ["Hardly had we arrived when it started", "Hardly we had arrived when it started", "Hardly had arrived we when it started", "When it started hardly we had arrived"],
+      "answer": "Hardly we had arrived when it started"
+    },
+    {
+      "id": "35c",
+      "level_hint": "C2",
+      "skill": "Grammar",
+      "type": "mc",
+      "prompt": "The data appears to ____ the hypothesis, though further investigation is warranted.",
+      "options": ["support", "supporting", "supported", "supports to"],
+      "answer": "support"
     }
   ]
 }

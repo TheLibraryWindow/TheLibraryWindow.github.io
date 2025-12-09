@@ -1,177 +1,158 @@
 extends Node
 class_name VisualEffects
 
-# Fluid animation and abstract art generator for professional UI enhancement
-
-signal animation_completed(anim_name: String)
-
-# Abstract art patterns
 static func create_animated_gradient(parent: Control, colors: Array, duration: float = 8.0) -> ColorRect:
 	var gradient := ColorRect.new()
+	gradient.name = "AnimatedGradient"
 	gradient.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	gradient.anchor_right = 1.0
-	gradient.anchor_bottom = 1.0
+	gradient.set_anchors_preset(Control.PRESET_FULL_RECT)
 	parent.add_child(gradient)
 	parent.move_child(gradient, 0)  # Move to back
 	
 	var tween := gradient.create_tween()
 	tween.set_loops()
-	tween.set_parallel(true)
+	tween.set_parallel(false)
 	
 	for i in range(colors.size()):
-		var next_color: Color = colors[(i + 1) % colors.size()]
-		tween.tween_property(gradient, "color", next_color, duration / colors.size())
+		var next_color: Color = colors[i]
+		var next_index := (i + 1) % colors.size()
+		var target_color: Color = colors[next_index]
+		tween.tween_property(gradient, "color", target_color, duration / float(colors.size()))
 	
 	return gradient
 
 static func create_flowing_particles(parent: Control, count: int = 12) -> Control:
-	var particles := Control.new()
-	particles.name = "FlowingParticles"
-	particles.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	particles.anchor_right = 1.0
-	particles.anchor_bottom = 1.0
-	parent.add_child(particles)
-	parent.move_child(particles, 0)
+	var container := Control.new()
+	container.name = "FlowingParticles"
+	container.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	container.set_anchors_preset(Control.PRESET_FULL_RECT)
+	parent.add_child(container)
+	parent.move_child(container, 0)
 	
-	for i in count:
+	for i in range(count):
 		var particle := ColorRect.new()
-		particle.size = Vector2(3, 80 + randf() * 120)
-		particle.color = Color(0.2, 0.5, 0.8, 0.15 + randf() * 0.1)
-		particle.position = Vector2(randf() * parent.size.x, -100 - randf() * 200)
-		particles.add_child(particle)
+		particle.name = "Particle%d" % i
+		particle.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		var size := randf_range(20.0, 60.0)
+		particle.custom_minimum_size = Vector2(size, size)
+		particle.color = Color(0.3, 0.5, 0.8, randf_range(0.1, 0.3))
+		particle.position = Vector2(randf() * parent.size.x, randf() * parent.size.y)
+		container.add_child(particle)
 		
 		var tween := particle.create_tween()
 		tween.set_loops()
-		tween.set_parallel(false)
-		var start_x := particle.position.x
-		var drift := (randf() - 0.5) * 200
-		var speed := 8.0 + randf() * 4.0
-		
-		tween.tween_property(particle, "position:y", parent.size.y + 200, speed)
-		tween.tween_callback(func(): particle.position.y = -200)
-		tween.tween_property(particle, "position:x", start_x + drift, speed * 0.5)
-		tween.tween_property(particle, "position:x", start_x, speed * 0.5)
+		var start_pos := particle.position
+		var end_pos := Vector2(
+			start_pos.x + randf_range(-200, 200),
+			start_pos.y + randf_range(-200, 200)
+		)
+		tween.tween_property(particle, "position", end_pos, randf_range(3.0, 6.0))
+		tween.tween_property(particle, "position", start_pos, randf_range(3.0, 6.0))
 	
-	return particles
+	return container
 
-static func create_orb_animation(parent: Control, radius: float = 150.0) -> Control:
-	var orb := Control.new()
+static func smooth_fade_in(control: CanvasItem, duration: float = 0.5) -> void:
+	if not is_instance_valid(control):
+		return
+	control.modulate.a = 0.0
+	var tween := control.create_tween()
+	tween.tween_property(control, "modulate:a", 1.0, duration)
+
+static func smooth_slide_in(control: CanvasItem, direction: Vector2, duration: float = 0.5) -> void:
+	if not is_instance_valid(control):
+		return
+	var start_pos: Vector2 = control.position
+	var offset: Vector2 = direction * 100.0
+	control.position = start_pos + offset
+	control.modulate.a = 0.0
+	var tween := control.create_tween()
+	tween.set_parallel(true)
+	tween.tween_property(control, "position", start_pos, duration)
+	tween.tween_property(control, "modulate:a", 1.0, duration)
+
+static func animate_progress_bar(bar: ProgressBar, target_value: float, duration: float = 0.5) -> void:
+	if not is_instance_valid(bar):
+		return
+	var tween := bar.create_tween()
+	tween.tween_property(bar, "value", target_value, duration)
+
+static func create_orb_animation(parent: Control, duration: float = 120.0) -> ColorRect:
+	var orb := ColorRect.new()
+	orb.name = "FloatingOrb"
 	orb.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	orb.custom_minimum_size = Vector2(radius * 2, radius * 2)
+	var size := randf_range(80.0, 150.0)
+	orb.custom_minimum_size = Vector2(size, size)
+	orb.color = Color(0.4, 0.6, 0.9, randf_range(0.15, 0.25))
+	orb.position = Vector2(randf() * parent.size.x, randf() * parent.size.y)
 	parent.add_child(orb)
-	
-	var circle := ColorRect.new()
-	circle.size = Vector2(radius * 2, radius * 2)
-	circle.color = Color(0.3, 0.6, 0.9, 0.08)
-	circle.position = Vector2(-radius, -radius)
-	orb.add_child(circle)
 	
 	var tween := orb.create_tween()
 	tween.set_loops()
 	tween.set_parallel(true)
 	
 	# Floating movement
-	var center := parent.size / 2.0
-	var offset := Vector2(randf_range(-200, 200), randf_range(-200, 200))
-	tween.tween_property(orb, "position", center + offset, 12.0)
-	tween.tween_property(orb, "position", center - offset, 12.0)
+	var start_pos := orb.position
+	var end_pos := Vector2(
+		start_pos.x + randf_range(-300, 300),
+		start_pos.y + randf_range(-300, 300)
+	)
+	tween.tween_property(orb, "position", end_pos, duration)
+	tween.tween_property(orb, "position", start_pos, duration)
 	
 	# Pulsing scale
-	tween.tween_property(circle, "scale", Vector2(1.3, 1.3), 4.0)
-	tween.tween_property(circle, "scale", Vector2(1.0, 1.0), 4.0)
+	tween.tween_property(orb, "scale", Vector2(1.2, 1.2), duration * 0.5)
+	tween.tween_property(orb, "scale", Vector2(1.0, 1.0), duration * 0.5)
 	
 	return orb
 
-static func create_geometric_pattern(parent: Control) -> Control:
-	var pattern := Control.new()
-	pattern.name = "GeometricPattern"
-	pattern.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	parent.add_child(pattern)
-	parent.move_child(pattern, 0)
+static func create_floating_orbs(parent: Control, count: int = 5) -> void:
+	for i in range(count):
+		create_orb_animation(parent, 120.0 + randf() * 80.0)
+
+static func create_geometric_pattern(parent: Control, density: int = 10) -> Control:
+	var container := Control.new()
+	container.name = "GeometricPattern"
+	container.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	container.set_anchors_preset(Control.PRESET_FULL_RECT)
+	parent.add_child(container)
+	parent.move_child(container, 0)
 	
-	var lines := []
-	for i in range(8):
-		var line := ColorRect.new()
-		line.custom_minimum_size = Vector2(2, 0)
-		line.color = Color(0.4, 0.7, 1.0, 0.06)
-		line.anchor_right = 1.0
-		line.anchor_bottom = 1.0
-		pattern.add_child(line)
-		lines.append(line)
+	for i in range(density):
+		var shape := ColorRect.new()
+		shape.name = "Shape%d" % i
+		shape.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		var size := randf_range(40.0, 120.0)
+		shape.custom_minimum_size = Vector2(size, size)
+		shape.color = Color(0.2, 0.3, 0.5, randf_range(0.05, 0.15))
+		shape.position = Vector2(randf() * parent.size.x, randf() * parent.size.y)
+		container.add_child(shape)
 		
-		var tween := line.create_tween()
+		var tween := shape.create_tween()
 		tween.set_loops()
-		var angle := (i / 8.0) * TAU
-		var distance := 800.0
-		var start_pos := Vector2(cos(angle), sin(angle)) * distance
-		var end_pos := Vector2(cos(angle + PI), sin(angle + PI)) * distance
-		
-		tween.tween_property(line, "position", start_pos, 0.0)
-		tween.tween_property(line, "position", end_pos, 20.0)
-		tween.tween_property(line, "position", start_pos, 0.0)
+		tween.tween_property(shape, "rotation_degrees", shape.rotation_degrees + 360, randf_range(10.0, 20.0))
 	
-	return pattern
+	return container
 
-static func smooth_fade_in(node: CanvasItem, duration: float = 0.6) -> Tween:
-	if not node:
-		return null
-	node.modulate.a = 0.0
-	var tween := node.create_tween()
-	tween.tween_property(node, "modulate:a", 1.0, duration)
-	tween.set_ease(Tween.EASE_OUT)
-	tween.set_trans(Tween.TRANS_CUBIC)
-	return tween
-
-static func smooth_slide_in(node: Control, from_offset: Vector2, duration: float = 0.5) -> Tween:
-	if not node:
-		return null
-	var final_pos := node.position
-	node.position = final_pos + from_offset
-	node.modulate.a = 0.0
-	var tween := node.create_tween()
-	tween.set_parallel(true)
-	tween.tween_property(node, "position", final_pos, duration)
-	tween.tween_property(node, "modulate:a", 1.0, duration)
-	tween.set_ease(Tween.EASE_OUT)
-	tween.set_trans(Tween.TRANS_CUBIC)
-	return tween
-
-static func create_glow_effect(node: Control, color: Color = Color(0.4, 0.7, 1.0, 0.3)) -> void:
-	var glow := ColorRect.new()
-	glow.name = "GlowEffect"
-	glow.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	glow.color = color
-	glow.anchor_left = -0.1
-	glow.anchor_top = -0.1
-	glow.anchor_right = 1.1
-	glow.anchor_bottom = 1.1
-	node.add_child(glow)
-	node.move_child(glow, 0)
-	
-	var tween := glow.create_tween()
-	tween.set_loops()
-	tween.tween_property(glow, "modulate:a", color.a * 0.5, 2.0)
-	tween.tween_property(glow, "modulate:a", color.a, 2.0)
-
-static func animate_progress_bar(bar: ProgressBar, target_value: float, duration: float = 1.0) -> Tween:
-	if not bar:
-		return null
-	var tween := bar.create_tween()
-	tween.tween_property(bar, "value", target_value, duration)
-	tween.set_ease(Tween.EASE_OUT)
-	tween.set_trans(Tween.TRANS_CUBIC)
-	return tween
-
-static func create_ripple_effect(parent: Control, center: Vector2, color: Color = Color(0.5, 0.8, 1.0, 0.4)) -> void:
+static func create_ripple_effect(parent: Control, position: Vector2, color: Color = Color.WHITE, size: float = 50.0, duration: float = 0.5) -> void:
 	var ripple := ColorRect.new()
-	ripple.position = center - Vector2(10, 10)
-	ripple.size = Vector2(20, 20)
+	ripple.name = "Ripple"
+	ripple.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	ripple.custom_minimum_size = Vector2(size, size)
 	ripple.color = color
+	ripple.position = position - Vector2(size * 0.5, size * 0.5)
 	parent.add_child(ripple)
 	
 	var tween := ripple.create_tween()
 	tween.set_parallel(true)
-	tween.tween_property(ripple, "size", Vector2(200, 200), 0.8)
-	tween.tween_property(ripple, "position", center - Vector2(100, 100), 0.8)
-	tween.tween_property(ripple, "modulate:a", 0.0, 0.8)
-	tween.tween_callback(ripple.queue_free)
+	tween.tween_property(ripple, "scale", Vector2(3.0, 3.0), duration)
+	tween.tween_property(ripple, "modulate:a", 0.0, duration)
+	tween.tween_callback(ripple.queue_free).set_delay(duration)
+
+static func create_animated_background_gradient(parent: Control, colors: Array, duration: float = 8.0) -> ColorRect:
+	return create_animated_gradient(parent, colors, duration)
+
+static func create_abstract_art_background(parent: Control, num_shapes: int = 5) -> Control:
+	return create_geometric_pattern(parent, num_shapes)
+
+static func create_fluid_animation(parent: Control, num_elements: int = 10) -> Control:
+	return create_flowing_particles(parent, num_elements)
