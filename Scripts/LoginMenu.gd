@@ -33,14 +33,14 @@ signal user_ready(username: String)
 @onready var flow_lines: HBoxContainer = $FlowLines
 @onready var layout_container: Control = $Layout
 
-var phrases := [
+var phrases: Array[String] = [
 	"Adaptive Trinity ISE prep",
 	"Precision desktop coaching",
 	"Animated guidance for every skill",
 	"Track Listening · Speaking · Reading · Writing",
 	"Earn badges as you climb from B1 to C1"
 ]
-var phrase_index := 0
+var phrase_index: int = 0
 var auth_manager: Node
 
 func _ready() -> void:
